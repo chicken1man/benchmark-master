@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "Test" -j "../../../jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-Raw.jmx" -d "Redshift" -s "jdbc:redshift://as-benchmark2.c75ae8nwit7v.us-east-2.redshift.amazonaws.com:5439/dev" -u "awsuser" -p "password-goes-here" -l "../../../Benchmark-Results" -m "test"

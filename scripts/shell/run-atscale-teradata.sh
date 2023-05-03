@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "AtScale.Teradata.2019Q3" -j "../../../jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-AtScale.jmx" -d "AtScale.Teradata" -s "jdbc:hive2://atscale-node-01.docker.infra.atscale.com:11111" -u "admin" -p "admin" -n "tpc-ds benchmark model - teradata" -l "../../../Benchmark-Results"

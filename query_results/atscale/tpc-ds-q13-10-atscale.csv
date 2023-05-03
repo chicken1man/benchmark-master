@@ -1,0 +1,53 @@
+﻿,,,
+"SELECT
+    SUM(`TPC-DS Benchmark Model`.`m_SS_QUANTITY_avg`)             AS `sum_m_ss_quantity_avg_ok`,
+    SUM( `TPC-DS Benchmark Model`.`m_SS_EXT_SALES_PRICE_avg` ) AS `sum_m_ss_ext_sales_price_avg_ok`
+    ,
+    SUM( `TPC-DS Benchmark Model`.`m_SS_EXT_WHOLESALE_COST_avg` ) AS
+    `sum_m_ss_ext_wholesale_cost_avg_ok`,
+    SUM( `TPC-DS Benchmark Model`.`m_ss_ext_wholesale_cost_sum` ) AS
+    `sum_m_ss_ext_wholesale_cost_sum_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    `TPC-DS Benchmark Model`.`Sold Calendar Year-Week` = 2001
+AND ( (
+            `TPC-DS Benchmark Model`.`d_cd_education_status` = '4 yr Degree'
+        AND `TPC-DS Benchmark Model`.`d_cd_marital_status` = 'S'
+        AND `TPC-DS Benchmark Model`.`d_hd_dep_count` = 3
+        AND `TPC-DS Benchmark Model`.`d_sales_price_tier` = '100-150')
+    OR  (
+            `TPC-DS Benchmark Model`.`d_cd_education_status` = 'Advanced Degree'
+        AND `TPC-DS Benchmark Model`.`d_cd_marital_status` = 'D'
+        AND `TPC-DS Benchmark Model`.`d_hd_dep_count` = 1
+        AND `TPC-DS Benchmark Model`.`d_sales_price_tier` = ' 50-100')
+    OR  (
+            `TPC-DS Benchmark Model`.`d_cd_education_status` = '2 yr Degree'
+        AND `TPC-DS Benchmark Model`.`d_cd_marital_status` = 'M'
+        AND `TPC-DS Benchmark Model`.`d_hd_dep_count` = 1
+        AND `TPC-DS Benchmark Model`.`d_sales_price_tier` = '150-200') )
+AND ( (
+            `TPC-DS Benchmark Model`.`d_customer_country` = 'United States'
+        AND`TPC-DS Benchmark Model`.`d_customer_state` IN ('MS',
+                                                         'NC',
+                                                         'TX')
+        AND`TPC-DS Benchmark Model`.`d_net_profit_tier` IN ('100-150',
+                                                            '150-200') )
+    OR  (
+            `TPC-DS Benchmark Model`.`d_customer_country` = 'United States'
+        AND`TPC-DS Benchmark Model`.`d_customer_state` IN ('TN',
+                                                         'WA',
+                                                         'NE')
+        AND`TPC-DS Benchmark Model`.`d_net_profit_tier` IN ('150-200', '200-250', '250-300') )
+    OR  (
+            `TPC-DS Benchmark Model`.`d_customer_country` = 'United States'
+        AND`TPC-DS Benchmark Model`.`d_customer_state` IN ('MA',
+                                                         'OR',
+                                                         'UT')
+        AND`TPC-DS Benchmark Model`.`d_net_profit_tier` IN ( ' 50-100',
+                                                            '100-150',
+                                                            '150-200',
+                                                            '200-250' ) ) )",,,
+,,,
+sum_m_ss_quantity_avg_ok,sum_m_ss_ext_sales_price_avg_ok,sum_m_ss_ext_wholesale_cost_avg_ok,sum_m_ss_ext_wholesale_cost_sum_ok
+32.092061,2436.886092,2215.370532,122368206.7

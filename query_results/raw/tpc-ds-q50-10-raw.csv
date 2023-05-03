@@ -1,0 +1,101 @@
+﻿S_STORE_NAME,S_COMPANY_ID,S_STREET_NUMBER,S_STREET_NAME,S_STREET_TYPE,S_SUITE_NUMBER,S_CITY,S_COUNTY,S_STATE,S_ZIP,30 days,31-60 days,61-90 days,91-120 days,>120 days
+able,1,113,South ,Parkway,Suite 200,Pine Hill,Contra Costa County,CA,99236,8986,7174,4270,4111,8536
+able,1,115,Hickory ,Circle,Suite N,Clifton,Mobile County,AL,38014,8575,6618,4357,4597,8655
+able,1,128,15th ,RD,Suite T,Winchester,Nuckolls County,NE,63252,8453,6624,4388,4118,8532
+able,1,128,Church East,ST,Suite U,Oak Hill,Contra Costa County,CA,97838,8650,6699,4248,4126,8564
+able,1,140,6th ,Avenue,Suite 120,Buffalo,Quay County,NM,87098,8982,6655,4090,4331,8140
+able,1,148,River 2nd,Road,Suite 10,Pine Hill,Lea County,NM,89236,8791,6457,4440,4179,8565
+able,1,17,Main ,Ct.,Suite K,Woodland,Baltimore County,MD,24854,9202,6593,4488,4159,8598
+able,1,170,Mill ,Circle,Suite J,Cross Roads,Klamath County,OR,96894,8673,6572,4341,4359,8513
+able,1,184,Main Elm,Ct.,Suite 90,Clinton,Richland County,OH,48222,8432,6690,4716,4419,8357
+able,1,193,5th ,Ave,Suite 420,Winchester,Quay County,NM,83252,8826,6736,4069,4102,8556
+able,1,194,Williams 6th,Way,Suite D,Needmore,Essex County,VT,09720,8304,7100,4190,4162,8191
+able,1,197,Central Second,Cir.,Suite H,Farmington,Barrow County,GA,39145,9049,6663,4142,4221,8332
+able,1,20,Main ,Boulevard,Suite 140,Highland Park,Dauphin County,PA,16534,8602,6610,4378,4186,8707
+able,1,206,Main ,Pkwy,Suite I,Antioch,Salem County,NJ,09205,8496,6512,4317,4331,8541
+able,1,227,8th ,Road,Suite 290,Hollywood,Salem County,NJ,08601,8770,6606,4260,4242,8884
+able,1,228,Cherry ,Avenue,Suite G,Mill Creek,Camden County,GA,37395,8489,6945,4154,4356,8614
+able,1,244,Maple Lakeview,Way,Suite 430,Smyrna,Carter County,OK,78119,8654,6763,4150,4272,8353
+able,1,253,Pine Central,ST,Suite O,Needmore,Lunenburg County,VA,29120,8843,6927,4345,4071,8403
+able,1,255,Sycamore ,Dr.,Suite 410,Corinth,Quay County,NM,87022,8519,6507,4108,3998,8798
+able,1,259,11th Railroad,Street,Suite 160,Highland,Red River Parish,LA,79454,8390,6807,4287,4268,8685
+able,1,292,Walnut North,Circle,Suite Q,Lebanon,Abbeville County,SC,22898,8525,6728,4094,4476,8249
+able,1,293,7th Hill,Ave,Suite W,Unionville,Van Buren County,MI,41711,8795,6804,4224,3986,8428
+able,1,300,Forest ,Lane,Suite 230,Springdale,Cocke County,TN,38883,8741,6591,3989,4275,8393
+able,1,302,Walnut Madison,Wy,Suite T,Hillsdale,Sumner County,TN,33054,8847,6682,4601,4173,8697
+able,1,31,1st ,RD,Suite 270,White Oak,Daviess County,MO,66668,8967,6733,4135,4027,8490
+able,1,322,View ,Avenue,Suite 20,Deerfield,Coal County,OK,79840,9190,6982,4269,4306,8448
+able,1,325,Walnut ,Circle,Suite D,Plainview,Jackson County,NC,23683,8678,6406,4397,4247,8644
+able,1,329,Laurel West,Lane,Suite N,Milltown,Nuckolls County,NE,67534,8765,6717,4237,4160,8479
+able,1,340,15th ,Drive,Suite Q,Bridgeport,Marshall County,IN,45817,8825,6750,4109,4017,8122
+able,1,372,Valley Center,Lane,Suite Q,Monroe,Harmon County,OK,73984,8759,6717,4227,4193,8657
+able,1,394,Main ,Road,Suite 160,Cedar Grove,Saginaw County,MI,40411,8715,6854,4579,4145,8602
+able,1,400,Locust ,Lane,Suite B,Clinton,Montgomery County,KS,68222,8860,6550,4119,4204,8785
+able,1,403,Poplar Wilson,Avenue,Suite N,Lincoln,Appanoose County,IA,51289,8831,6548,4102,4572,8663
+able,1,407,Willow West,Ave,Suite Q,Independence,Nuckolls County,NE,68988,8957,6749,4598,4127,8953
+able,1,427,Willow 10th,Cir.,Suite 440,Winchester,Richland County,OH,43252,8737,6967,4192,4461,8368
+able,1,441,11th ,ST,Suite H,Dayton,Marshall County,IN,42633,8770,6565,4190,4367,8425
+able,1,443,Hickory Sycamore,Street,Suite C,Unionville,Miller County,GA,31711,8567,6380,4104,4054,8389
+able,1,452,Mill ,Lane,Suite X,Williamsburg,Dauphin County,PA,18336,8955,7103,4076,4140,8452
+able,1,479,Park First,Lane,Suite 20,Riverview,Cocke County,TN,39003,8770,6976,4194,4036,8691
+able,1,483,Dogwood ,Avenue,Suite D,Rosedale,Dade County,GA,32645,8377,6687,4446,4125,8444
+able,1,49,Highland 1st,Drive,Suite 80,Harrisburg,Somerset County,MD,20974,9063,6786,4401,4184,8047
+able,1,490,Fourth ,Cir.,Suite T,Jackson,Gage County,NE,69583,8426,6617,4250,4255,8482
+able,1,521,Elm ,Dr.,Suite C,Glenwood,Fairfield County,SC,23511,8738,6836,4372,4145,8655
+able,1,521,Fourth 12th,Lane,Suite O,Columbia,Abbeville County,SC,23292,8796,6365,4210,4239,8606
+able,1,535,Locust ,Dr.,Suite 90,Liberty,Maverick County,TX,73451,8710,6746,4130,4362,8444
+able,1,54,12th ,Cir.,Suite B,White Oak,Brazos County,TX,76668,8411,6449,3903,4267,8852
+able,1,543,West Elm,Ln,Suite A,Franklin,Salem County,NJ,09701,8837,6720,4290,4632,8144
+able,1,545,Pine ,ST,Suite D,Fairview,Richland County,OH,45709,8834,6792,4170,4192,8302
+able,1,550,Ridge ,Cir.,Suite 10,Five Forks,Gage County,NE,62293,8744,6886,4231,4225,8193
+able,1,554,Cherry ,Drive,Suite I,Cloverdale,Somerset County,MD,22000,8664,6778,4392,4480,8700
+able,1,557,Elevnth 7th,Pkwy,Suite L,Farmington,Walker County,AL,39145,8808,6839,4318,4136,8432
+able,1,562,8th ,Ln,Suite 110,Dayton,Somerset County,MD,22633,8759,6906,4235,4163,8245
+able,1,571,First Main,Road,Suite 130,Maple Grove,Terry County,TX,78252,8836,6344,4256,4396,8416
+able,1,589,8th 6th,Avenue,Suite V,Highland Park,Camden County,GA,36534,8906,6934,4041,4423,8815
+able,1,605,Williams South,Ln,Suite D,Winchester,Bronx County,NY,13252,8474,6725,4269,4308,8459
+able,1,610,Birch Sycamore,Parkway,Suite 10,Ashland,Jefferson Davis Parish,LA,74244,8767,6742,4248,4321,8468
+able,1,617,3rd Sixth,ST,Suite V,Jefferson,Van Buren County,MI,41795,8496,6616,4432,4121,8825
+able,1,62,15th ,Wy,Suite 50,Marion,Adams County,IN,40399,8899,6680,4402,4340,8689
+able,1,633,Elm ,Way,Suite 280,Harrisburg,Halifax County,NC,20974,8596,6930,4402,4313,8369
+able,1,634,Park 4th,Avenue,Suite 70,Woodland,Baltimore County,MD,24854,8950,6784,4153,4087,8196
+able,1,667,Ridge Maple,Pkwy,Suite X,Sherwood Forest,Saginaw County,MI,46702,8562,6637,4161,4465,8297
+able,1,667,Sunset ,Ct.,Suite Q,Springdale,Walker County,AL,38883,8629,6765,4279,4115,8149
+able,1,672,Williams 2nd,Pkwy,Suite 40,Fairfield,Klamath County,OR,96192,8683,6858,4501,4232,8568
+able,1,685,North Second,Road,Suite Y,Mount Pleasant,Oglethorpe County,GA,31933,8585,6676,4375,4195,8384
+able,1,698,Highland 13th,Court,Suite H,Georgetown,Pennington County,MN,57057,8705,6653,4265,4601,8257
+able,1,698,North Hill,Road,Suite I,Fairview,Raleigh County,WV,25709,8522,6543,4188,4494,8632
+able,1,702,Cedar 6th,Blvd,Suite 370,Chester,Essex County,VT,06688,8747,6263,4168,4225,8405
+able,1,707,View ,Ave,Suite 150,Belmont,Perry County,IL,60191,8403,7222,4064,4154,8682
+able,1,714,Washington Forest,Boulevard,Suite 350,Corinth,Sumner County,TN,37022,8449,6744,4257,4318,8895
+able,1,722,Railroad Spring,Ct.,Suite M,Pleasant Valley,Miller County,GA,32477,8899,6611,4236,4169,8341
+able,1,727,North Forest,Avenue,Suite H,Fairview,Wilkinson County,GA,35709,8656,6822,4104,4223,8486
+able,1,738,Miller ,Court,Suite R,Providence,Anderson County,KY,46614,8709,6820,4161,4326,8998
+able,1,749,Railroad Maple,Drive,Suite 10,Richland,Wilkinson County,GA,36510,8358,6574,4611,4345,8564
+able,1,771,Willow ,Street,Suite N,Lincoln,Sumner County,TN,31289,8678,6575,4078,4267,8495
+able,1,799,1st 7th,Ct.,Suite 100,Cedar Grove,Wadena County,MN,50411,8647,6714,4207,4214,8564
+able,1,811,Eigth ,RD,Suite M,Shady Grove,Quay County,NM,82812,8294,6432,4203,4416,8462
+able,1,822,Johnson Third,ST,Suite P,Providence,Richland County,OH,46614,8556,6786,4240,4484,8667
+able,1,824,Valley ,Cir.,Suite A,Woodville,Harmon County,OK,74289,8591,6660,4255,4365,8717
+able,1,837,Cherry Washington,Way,Suite 10,Fairview,Lea County,NM,85709,8919,6700,4145,4274,8311
+able,1,838,Pine Tenth,Parkway,Suite 360,Mount Olive,Mariposa County,CA,98059,8718,6638,4345,4434,9053
+able,1,841,Mill Woodland,Pkwy,Suite S,Troy,Green Lake County,WI,50320,8654,6732,4144,4137,8813
+able,1,846,Cherry ,ST,Suite T,Oak Grove,Jackson County,NC,28370,8984,6739,4302,4328,8645
+able,1,868,Main Park,Ct.,Suite 240,Dayton,Warren County,IN,42633,8794,6432,4360,4293,8471
+able,1,872,College ,Cir.,Suite J,Newport,Somerset County,MD,21521,9405,6933,4202,4484,8872
+able,1,880,4th Adams,Boulevard,Suite 370,Glendale,Brazos County,TX,73951,8677,6623,3975,4044,8338
+able,1,895,6th ,Circle,Suite 380,Oak Hill,Brazos County,TX,77838,8760,6744,4185,4154,8424
+able,1,91,1st ,Boulevard,Suite B,Liberty,Warren County,IN,43451,8618,6627,4535,4101,8474
+able,1,91,Fifth ,Court,Suite 180,Jefferson,Walker County,AL,31795,8645,6810,4419,4141,8635
+able,1,913,Eigth Elm,Ct.,Suite 470,Watson,Harmon County,OK,71771,8603,6951,4030,4164,8835
+able,1,924,2nd Meadow,Way,Suite Y,Plainview,Brazos County,TX,73683,8866,6491,4460,4449,8506
+able,1,936,Franklin ,Drive,Suite D,Jackson,Bronx County,NY,19583,8900,6731,4389,4073,8616
+able,1,940,River Second,Street,Suite Q,Eureka,Franklin Parish,LA,75990,8518,6627,4131,4354,8694
+able,1,940,South ,Ave,Suite I,Belmont,Mobile County,AL,30191,9104,6739,4384,4266,8727
+able,1,942,Railroad ,Avenue,Suite 290,Bethel,Raleigh County,WV,25281,8686,6737,4690,4302,8154
+able,1,943,15th Mill,Dr.,Suite 150,Four Corners,Barrow County,GA,36871,8836,6598,4249,4332,8322
+able,1,954,Walnut ,Pkwy,Suite L,Williamsburg,Hubbard County,MN,58336,8599,6383,4271,4160,9095
+able,1,970,7th ,Dr.,Suite 50,Highland Park,Henry County,VA,26534,8703,6833,4358,4239,8507
+able,1,972,3rd Highland,Avenue,Suite 230,Spring Hill,Montgomery County,KS,66787,9375,6686,4163,4162,8613
+able,1,972,Chestnut ,Wy,Suite S,Washington,Dade County,GA,38283,8427,6778,4399,4178,8810
+able,,941,,Avenue,Suite 210,,Henry County,,,8784,6484,4274,3937,8274

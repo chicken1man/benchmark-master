@@ -1,0 +1,134 @@
+﻿,,,,,,,,,,
+"SELECT
+    `TPC-DS Benchmark Model`.`d_warehouse_name`                 AS `d_warehouse_name`,
+    `TPC-DS Benchmark Model`.`d_warehouse_square_feet`          AS `d_warehouse_square_feet`,
+    `TPC-DS Benchmark Model`.`Warehouse City`                   AS `warehouse_city`,
+    `TPC-DS Benchmark Model`.`Warehouse County`                 AS `warehouse_county`,
+    `TPC-DS Benchmark Model`.`Warehouse State`                  AS `warehouse_state`,
+    `TPC-DS Benchmark Model`.`Warehouse Country`                AS `warehouse_country`,
+    `TPC-DS Benchmark Model`.`Sold Calendar Year-Week`          AS `sold_calendar_year_week`,
+    `TPC-DS Benchmark Model`.`Sold Calendar Month-Week`         AS `sold_calendar_month_week`,
+    SUM(`TPC-DS Benchmark Model`.`Catalog and Web Sales`)       AS `sum_catalog_and_web_sales_ok`,
+    SUM( `TPC-DS Benchmark Model`.`Catalog and Web Sales Net` ) AS
+    `sum_catalog_and_web_sales_net_ok`,
+    SUM( `TPC-DS Benchmark Model`.`Catalog and Web Sales per Warehouse SqFt` ) AS
+    `sum_catalog_and_web_sales_per_warehouse_sqft_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    `TPC-DS Benchmark Model`.`Carrier` IN ('GREAT EASTERN',
+                                           'UPS')
+AND `TPC-DS Benchmark Model`.`Sold Calendar Year-Week` = 1998
+AND `TPC-DS Benchmark Model`.`Sold d_time_sequence` BETWEEN 46866 AND 46866+28800
+GROUP BY
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+ORDER BY
+    1 LIMIT 100",,,,,,,,,,
+,,,,,,,,,,
+d_warehouse_name,d_warehouse_square_feet,warehouse_city,warehouse_county,warehouse_state,warehouse_country,sold_calendar_year_week,sold_calendar_month_week,sum_catalog_and_web_sales_ok,sum_catalog_and_web_sales_net_ok,sum_catalog_and_web_sales_per_warehouse_sqft_ok
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-06-01,21461758026,56377575222,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-07-01,22571985939,58545995875,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-03-01,21784439705,56442850539,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-10-01,50843338460,1.32551E+11,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-04-01,21719660130,56433392834,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-12-01,77330422457,2.00887E+11,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,(null),(null),(null),(null),(null)
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-05-01,22460691422,57894053116,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-02-01,20181868506,52723468726,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-01-01,21710935040,57877165365,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-09-01,49215221102,1.2839E+11,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-11-01,72845742704,1.91284E+11,#DIV/0!
+(null),(null),Midway,Mesa County,CO,United States,1998,1998-08-01,49184829339,1.29379E+11,#DIV/0!
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-12-01,77431211934,2.01236E+11,485626.5565
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-02-01,20417933924,52777091840,128055.4791
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-07-01,22379626884,58097123379,140358.6599
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-09-01,49135275598,1.28492E+11,308162.4851
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-08-01,49382341673,1.29445E+11,309712.0133
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-01-01,21514541701,57281347743,134933.0915
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-03-01,21633812384,56479617778,135681.1233
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-10-01,50995373367,1.3301E+11,319828.4897
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-04-01,21660751690,56527920961,135850.079
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-05-01,22408050794,58389111792,140536.9266
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-06-01,21568617013,56190290342,135272.2364
+Agricultural measur,159446,Bethel,Bronx County,NY,United States,1998,1998-11-01,72794613304,1.91748E+11,456547.1276
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-10-01,50843797891,1.32535E+11,81843.2312
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-09-01,49316202796,1.2879E+11,79384.26228
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-01-01,21556467850,57538071888,34699.43347
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-02-01,20109613468,52671963210,32370.43283
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-07-01,22135648572,58054084828,35631.74033
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-05-01,22424270660,58392099070,36096.33513
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-11-01,73299659483,1.91908E+11,117990.4182
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-03-01,21816903564,56464693088,35118.65668
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-08-01,49227155064,1.29498E+11,79240.9222
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-06-01,21576836580,56583563005,34732.221
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-12-01,77124830570,2.01131E+11,124147.7939
+Bad cards must make.,621234,Oakland,Gage County,NE,United States,1998,1998-04-01,21803919631,56629764509,35097.75645
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-02-01,20337644739,52796498047,20799.66776
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-10-01,50917923313,1.32678E+11,52074.65768
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-05-01,22402432655,58144453115,22911.36276
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-11-01,73063864775,1.91422E+11,74723.70238
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-07-01,22437444796,58220929146,22947.17029
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-06-01,21591665700,56343643154,22082.1771
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-03-01,21532110697,56000627397,22021.26915
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-09-01,48885269508,1.28329E+11,49995.82681
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-08-01,49286552284,1.29759E+11,50406.22578
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-12-01,76934202909,2.00618E+11,78681.96541
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-01-01,21608387264,57785391225,22099.27854
+Conventional childr,977787,Shiloh,Franklin Parish,LA,United States,1998,1998-04-01,21673581350,56407671805,22165.95368
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-08-01,48998958113,1.29571E+11,166526.0504
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-02-01,20079604953,52368463125,68241.80421
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-01-01,21590332079,57447570947,73376.10565
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-11-01,73079104538,1.91958E+11,248363.9472
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-10-01,51093138659,1.32956E+11,173643.2551
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-05-01,22411058638,58567948125,76165.39664
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-07-01,22329157527,58071820863,75887.05055
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-04-01,21834689188,56714252518,74206.5687
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-12-01,76948837106,2.00323E+11,261515.4774
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-06-01,21551526193,56085509423,73244.2214
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-03-01,21593208888,56506925778,73385.88267
+Doors canno,294242,Cedar Grove,Raleigh County,WV,United States,1998,1998-09-01,49056530155,1.27879E+11,166721.7126
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-12-01,76929148730,2.01099E+11,388115.4962
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-01-01,21718422287,57929437726,109571.6823
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-11-01,72985321477,1.91523E+11,368218.4806
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-04-01,21807782031,56572891759,110022.5114
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-07-01,22232592651,58178015479,112165.7248
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-10-01,51034817392,1.32705E+11,257475.9217
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-06-01,21573468472,56319279421,108840.3753
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-05-01,22331365262,58341398736,112664.0429
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-02-01,20004751508,52425382173,100926.0363
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-08-01,49046330417,1.29227E+11,247443.7997
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-09-01,49209584457,1.28281E+11,248267.4331
+"Empty, middle women ",198212,Cedar Grove,Daviess County,MO,United States,1998,1998-03-01,21497665107,56237035267,108457.9395
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-02-01,20161998072,52402601212,23355.18967
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-04-01,21473229901,56312891718,24874.09013
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-12-01,77391456517,2.0156E+11,89648.46338
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-09-01,49239154442,1.28453E+11,57037.49138
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-08-01,49118233959,1.29585E+11,56897.4199
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-07-01,22471252765,58390321830,26030.1766
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-01-01,21711991227,57706155275,25150.66569
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-03-01,21726874994,56609764391,25167.9067
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-05-01,22513948202,58224532410,26079.634
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-10-01,51037875254,1.32828E+11,59121.08773
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-11-01,72953865746,1.91363E+11,84508.06143
+"Friendly, suitable ",863277,Lakeview,Ziebach County,SD,United States,1998,1998-06-01,21435603974,56192835687,24830.50513
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-05-01,22189602325,58260216920,35678.15815
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-08-01,49187024861,1.29447E+11,79086.70135
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-03-01,21669164057,56455902886,34841.35727
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-09-01,49143192017,1.2834E+11,79016.22351
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-10-01,50703493723,1.32669E+11,81524.99722
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-06-01,21906889789,56628129114,35223.59108
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-04-01,21714184802,56796080977,34913.7451
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-12-01,77370239345,2.01168E+11,124401.8525
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-01-01,21695646711,57738562516,34883.93813
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-02-01,19965942658,52338944256,32102.78622
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-11-01,72795139658,1.91567E+11,117045.6535
+Governments should,621938,Liberty,Mesa County,CO,United States,1998,1998-07-01,22421301400,58330018014,36050.70184
+Important dem,185634,Pleasant Hill,Jackson County,NC,United States,1998,1998-02-01,20297246704,52640124017,109340.1355
+Important dem,185634,Pleasant Hill,Jackson County,NC,United States,1998,1998-03-01,21600192075,56357168577,116359.0295
+Important dem,185634,Pleasant Hill,Jackson County,NC,United States,1998,1998-04-01,21676408596,56388526262,116769.6036

@@ -1,0 +1,135 @@
+﻿,,,,,
+"SELECT
+  `TPC-DS Benchmark Model`.`d_customer_id` AS `d_customer_id`,
+  `TPC-DS Benchmark Model`.`d_customer_first_name` AS `d_customer_first_name`,
+  `TPC-DS Benchmark Model`.`d_customer_last_name` AS `d_customer_last_name`,
+  `TPC-DS Benchmark Model`.`d_customer_login` AS `d_customer_login`,
+  `TPC-DS Benchmark Model`.`d_birth_country` AS `d_birth_country`,
+  `TPC-DS Benchmark Model`.`d_customer_email_address` AS `d_customer_email_address`
+FROM
+  `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+  (
+    `TPC-DS Benchmark Model`.`Catalog Preferred`
+    AND (
+      `TPC-DS Benchmark Model`.`Sold Calendar Year-Week` = 2001
+    )
+    AND (
+      `TPC-DS Benchmark Model`.`d_c_preferred_cust_flag` = 'Y'
+    )
+  )
+GROUP BY
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ORDER BY
+  1,
+  2,
+  3,
+  4
+LIMIT 100",,,,,
+,,,,,
+d_customer_id,d_customer_first_name,d_customer_last_name,d_customer_login,d_birth_country,d_customer_email_address
+AAAAAAAAAAAAAABA,Scott,Gordon,(null),"VIRGIN ISLANDS, U.S.",Scott.Gordon@ZComUTk4xQJU1vfhk.com
+AAAAAAAAAAAAAACA,Andrew,Hernandez,(null),CZECH REPUBLIC,Andrew.Hernandez@5T2DhtD.org
+AAAAAAAAAAAAAADA,Patrick,(null),(null),POLAND,Patrick.Lewis@fjtie7UFn4.org
+AAAAAAAAAAAAABAA,Melvin,Montgomery,(null),MOROCCO,Melvin.Montgomery@XUp8DHvBA8H.edu
+AAAAAAAAAAAAABBA,Troy,Webb,(null),NIGER,Troy.Webb@UmgJBzH0sZU7fxceI.org
+AAAAAAAAAAAAABCA,Paul,Brown,(null),ECUADOR,Paul.Brown@yTq6dk.edu
+AAAAAAAAAAAAABDA,Luba,Barrow,(null),TOGO,Luba.Barrow@GES8pPoOrApz.com
+AAAAAAAAAAAAACAA,Dorothy,Gillespie,(null),PORTUGAL,Dorothy.Gillespie@aDt2Na.edu
+AAAAAAAAAAAAACBA,Jason,Fuller,(null),INDIA,Jason.Fuller@VieMFTvT7V.edu
+AAAAAAAAAAAAACCA,John,Swartz,(null),GUADELOUPE,John.Swartz@jEM6rGNXOz34C.org
+AAAAAAAAAAAAACDA,Christina,Hart,(null),ANTARCTICA,Christina.Hart@eQdPJy104.com
+AAAAAAAAAAAAADAA,Clara,Karr,(null),SRI LANKA,Clara.Karr@HSS4eult.org
+AAAAAAAAAAAAADBA,Beth,Patrick,(null),HAITI,Beth.Patrick@1qUMHXS08X0L.com
+AAAAAAAAAAAAADCA,Molly,Werner,(null),BELARUS,Molly.Werner@Pyr73maVAYkYa2F7.org
+AAAAAAAAAAAAADDA,Matthew,Goodwin,(null),WALLIS AND FUTUNA,Matthew.Goodwin@QCM76JDIaF.edu
+AAAAAAAAAAAAAEAA,(null),(null),(null),RWANDA,(null)
+AAAAAAAAAAAAAEBA,Donna,Barnes,(null),GREENLAND,Donna.Barnes@IU.org
+AAAAAAAAAAAAAECA,Rebecca,Holder,(null),AMERICAN SAMOA,Rebecca.Holder@x.com
+AAAAAAAAAAAAAEDA,Chris,Palmer,(null),SRI LANKA,Chris.Palmer@HxNx.com
+AAAAAAAAAAAAAFAA,Barbara,Wright,(null),TURKMENISTAN,Barbara.Wright@VqELVKqeEbbJIkv.com
+AAAAAAAAAAAAAFBA,Scott,Cox,(null),PHILIPPINES,Scott.Cox@bh4iUvRf.com
+AAAAAAAAAAAAAFCA,Richard,Ford,(null),LESOTHO,Richard.Ford@gdOVrtV.edu
+AAAAAAAAAAAAAFDA,Lovie,Cummings,(null),MALTA,Lovie.Cummings@YZQ0H.org
+AAAAAAAAAAAAAGAA,Yvonne,Hardin,(null),SINGAPORE,Yvonne.Hardin@Dlf.edu
+AAAAAAAAAAAAAGBA,William,Burgos,(null),ARGENTINA,William.Burgos@xLsJ.org
+AAAAAAAAAAAAAGCA,Antonio,Carney,(null),PARAGUAY,Antonio.Carney@vH5bh.edu
+AAAAAAAAAAAAAGDA,Charles,Brown,(null),SAN MARINO,Charles.Brown@uJZlNxBkjnxkJcS.org
+AAAAAAAAAAAAAHAA,Kenneth,Brinkley,(null),ZAMBIA,Kenneth.Brinkley@4zJfC5Cp.com
+AAAAAAAAAAAAAHBA,Tim,Goodman,(null),TOKELAU,Tim.Goodman@Z1sQ9Vy4XH.com
+AAAAAAAAAAAAAHCA,Glenn,Rutledge,(null),EQUATORIAL GUINEA,Glenn.Rutledge@NfJ9.edu
+AAAAAAAAAAAAAHDA,Margaret,Moreland,(null),ISLE OF MAN,Margaret.Moreland@QE9n8onBcHrpKLMR.edu
+AAAAAAAAAAAAAIAA,(null),(null),(null),ANTIGUA AND BARBUDA,(null)
+AAAAAAAAAAAAAIBA,Ronald,Baker,(null),"MOLDOVA, REPUBLIC OF",Ronald.Baker@vEvUKls.edu
+AAAAAAAAAAAAAICA,Irene,(null),(null),(null),(null)
+AAAAAAAAAAAAAIDA,Sharon,Tidwell,(null),NIGER,Sharon.Tidwell@DJxPO.org
+AAAAAAAAAAAAAJAA,Arthur,Blair,(null),SAN MARINO,Arthur.Blair@rYtPl.org
+AAAAAAAAAAAAAJBA,Cynthia,(null),(null),(null),(null)
+AAAAAAAAAAAAAJCA,Marian,Sweet,(null),EGYPT,Marian.Sweet@jB.com
+AAAAAAAAAAAAAJDA,Timothy,Simpson,(null),KENYA,Timothy.Simpson@yPBEBla1GhrJu.com
+AAAAAAAAAAAAAKAA,Joshua,Padgett,(null),GRENADA,Joshua.Padgett@lP.org
+AAAAAAAAAAAAAKBA,Lance,Miller,(null),TUNISIA,Lance.Miller@eeToej4vsCi.com
+AAAAAAAAAAAAAKCA,Herbert,Kemp,(null),IRELAND,Herbert.Kemp@GhKYtk63a.org
+AAAAAAAAAAAAAKDA,Eldon,Lopez,(null),TAJIKISTAN,Eldon.Lopez@4yKR.com
+AAAAAAAAAAAAALAA,Kelvin,Sampson,(null),INDIA,Kelvin.Sampson@crisJvE.com
+AAAAAAAAAAAAALBA,Charles,Dodds,(null),MADAGASCAR,Charles.Dodds@DudqjTcLEhnk6Ibxn.org
+AAAAAAAAAAAAALCA,Edward,Talley,(null),NORFOLK ISLAND,Edward.Talley@M2raXXe45qaqH2.org
+AAAAAAAAAAAAALDA,Joseph,Hart,(null),"VIRGIN ISLANDS, U.S.",Joseph.Hart@elGLEYA.com
+AAAAAAAAAAAAAMAA,John,Lord,(null),ARGENTINA,John.Lord@dDvjTP5D0T.com
+AAAAAAAAAAAAAMBA,Charles,Johnson,(null),TURKEY,Charles.Johnson@bdJry2vhN.edu
+AAAAAAAAAAAAAMCA,Lawrence,Williams,(null),SLOVAKIA,Lawrence.Williams@udT5CzprSsiqZodFR.org
+AAAAAAAAAAAAAMDA,Arnold,Carroll,(null),NAURU,Arnold.Carroll@nbUFpsNeKkuS.edu
+AAAAAAAAAAAAANAA,Olga,Stanley,(null),GREECE,Olga.Stanley@aV8IM04ZsZcTqaH3v.com
+AAAAAAAAAAAAANBA,Stephen,Dickens,(null),ALBANIA,Stephen.Dickens@679TAOXlgchuJ.org
+AAAAAAAAAAAAANCA,Ervin,George,(null),SIERRA LEONE,Ervin.George@niGFep6Sph0IZ.org
+AAAAAAAAAAAAANDA,Alexandria,Lancaster,(null),ANDORRA,Alexandria.Lancaster@3qVRVDqDp.com
+AAAAAAAAAAAAAOAA,Timothy,Seaton,(null),GERMANY,Timothy.Seaton@PgLp473JEbsdRL4ljuB.org
+AAAAAAAAAAAAAOBA,Chanda,Mcknight,(null),YEMEN,Chanda.Mcknight@0Yizb5PGJ5Txc.org
+AAAAAAAAAAAAAOCA,Robert,Davis,(null),SENEGAL,Robert.Davis@O6omyJBuSfoJnZI9.org
+AAAAAAAAAAAAAPAA,Karen,Bright,(null),SAUDI ARABIA,Karen.Bright@jUdB2r9tJ0tJu3.org
+AAAAAAAAAAAAAPBA,Gerald,Smith,(null),VENEZUELA,Gerald.Smith@2yABUSV7vR.com
+AAAAAAAAAAAAAPCA,Glen,Russ,(null),BHUTAN,Glen.Russ@0qQnViXqh.org
+AAAAAAAAAAAABAAA,Robert,Sanders,(null),AUSTRALIA,Robert.Sanders@s9GHCiYVAhoag.edu
+AAAAAAAAAAAABABA,Loren,Coleman,(null),ANGUILLA,Loren.Coleman@5C5MpUJr.edu
+AAAAAAAAAAAABACA,Lewis,Cothran,(null),MEXICO,Lewis.Cothran@mqLhfK63t5nc1V.com
+AAAAAAAAAAAABADA,Ada,Fennell,(null),MARTINIQUE,Ada.Fennell@uMgftGA4qUky.com
+AAAAAAAAAAAABBAA,Elizabeth,White,(null),MALI,Elizabeth.White@2NyiyqHlYpTUFL.org
+AAAAAAAAAAAABBBA,Evelyn,Green,(null),NIUE,Evelyn.Green@ANzRSLV7A5.edu
+AAAAAAAAAAAABBCA,Marcus,Ledesma,(null),SYRIAN ARAB REPUBLIC,Marcus.Ledesma@1NbanchQSUnZ.org
+AAAAAAAAAAAABBDA,Stanley,Oliver,(null),CAYMAN ISLANDS,Stanley.Oliver@BkqH.com
+AAAAAAAAAAAABCAA,Debra,Wirth,(null),FIJI,Debra.Wirth@VroihiPVFqNul.edu
+AAAAAAAAAAAABCBA,Carl,Sheehan,(null),COSTA RICA,Carl.Sheehan@xdPc2PgyONl6.com
+AAAAAAAAAAAABCCA,Pauline,Harvey,(null),JERSEY,Pauline.Harvey@xasDpJdIo9N.com
+AAAAAAAAAAAABCDA,Matthew,Simon,(null),MONACO,Matthew.Simon@SZ.com
+AAAAAAAAAAAABDAA,Margaret,Mckinney,(null),HONDURAS,Margaret.Mckinney@9MOfMib.edu
+AAAAAAAAAAAABDBA,Magdalena,Fitts,(null),MALAYSIA,Magdalena.Fitts@fKjUFZSL.edu
+AAAAAAAAAAAABDCA,Marian,Dutton,(null),RWANDA,Marian.Dutton@HXxxabhJfgg.org
+AAAAAAAAAAAABDDA,Rodney,Christmas,(null),MALI,Rodney.Christmas@HFCL8r9N8lBsp0G9e.com
+AAAAAAAAAAAABEAA,Susan,Byers,(null),KIRIBATI,Susan.Byers@VddbOIoQXe.edu
+AAAAAAAAAAAABEBA,Hermila,Hale,(null),MALAWI,Hermila.Hale@f1zjBEe9id7a8SO.com
+AAAAAAAAAAAABECA,Linda,Diaz,(null),SAMOA,Linda.Diaz@c.org
+AAAAAAAAAAAABEDA,Eloise,Collins,(null),COMOROS,Eloise.Collins@hi.com
+AAAAAAAAAAAABFAA,Joseph,Lauer,(null),SURINAME,Joseph.Lauer@0a3SyTs.com
+AAAAAAAAAAAABFBA,Robert,Estrella,(null),LIBERIA,Robert.Estrella@E16ItELtzx5oc.com
+AAAAAAAAAAAABFCA,Santos,Webb,(null),GUINEA,Santos.Webb@qvRk91dEcBD.org
+AAAAAAAAAAAABFDA,Donald,Thompson,(null),CHRISTMAS ISLAND,Donald.Thompson@qPmUalAOZE1kA.com
+AAAAAAAAAAAABGAA,Albert,(null),(null),(null),Albert.Vail@NaGLxqSDTXD.org
+AAAAAAAAAAAABGBA,Julia,Ashworth,(null),INDONESIA,Julia.Ashworth@qQsMypJb.edu
+AAAAAAAAAAAABGCA,Larry,Butcher,(null),PORTUGAL,Larry.Butcher@cNPiO.com
+AAAAAAAAAAAABGDA,Mildred,Ruiz,(null),SLOVENIA,Mildred.Ruiz@YjO8eaiodDdVBsGC609K.edu
+AAAAAAAAAAAABHAA,Irene,Cromwell,(null),SENEGAL,Irene.Cromwell@jZzy9Ybd.edu
+AAAAAAAAAAAABHBA,Lisa,Harvey,(null),POLAND,Lisa.Harvey@jdUCCM.org
+AAAAAAAAAAAABHCA,Kimberly,Rios,(null),SAN MARINO,Kimberly.Rios@bkbZDHgc1YmZB.edu
+AAAAAAAAAAAABHDA,Alexis,Dorsey,(null),BULGARIA,Alexis.Dorsey@0E9X95hp.com
+AAAAAAAAAAAABIAA,Shane,Lowman,(null),NIGER,Shane.Lowman@o1nRgafvnsrmzFyTY.org
+AAAAAAAAAAAABIBA,Lissa,Duarte,(null),MALAWI,Lissa.Duarte@xnP.com
+AAAAAAAAAAAABICA,Emily,Sharp,(null),ISRAEL,Emily.Sharp@9rBsM2NR4ma06aq8.edu
+AAAAAAAAAAAABIDA,Brianne,Barbee,(null),WESTERN SAHARA,Brianne.Barbee@uJ4CbXoCuJJEEbo.com
+AAAAAAAAAAAABJAA,Lorraine,Delgadillo,(null),MARTINIQUE,Lorraine.Delgadillo@XVudvn.com
+AAAAAAAAAAAABJBA,Christina,Landry,(null),PANAMA,Christina.Landry@1dTcf8qn9oovMz7Z.edu
+AAAAAAAAAAAABJCA,Rosa,Brennan,(null),TUNISIA,Rosa.Brennan@2nkb2Zg.edu

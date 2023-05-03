@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<benchmark-results-loader>",
+            "request": "launch",
+            "mainClass": "atscale.BenchmarkResultsLoaderApp","args": "-f /Users/davidmariani/workspace/atscale/Benchmark-Results/Test/CSV/TCP-DS-Benchmark-Output.csv -t false",
+            "projectName": "benchmark-results-loader"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+Change these Engine Settings in AtScale Design Center:
+    1. Set ‘Maximum number of concurrent builds’ to 4 (in Settings/Aggregates)
+    2. connection.pool.getStateRequest.timeout = 12.hours (in Settings/Engine/Show Custom Settings)
+    3. feature.metrical.secondary.attributes - true (Secondary Metrical Attributes (Experimental) in Settings/Options)
+    4. datasource.queries.useSmallQueryRole = false
+    5. jobs.aggregates.watermarker.enabled = false
+    6. jobs.aggregates.maintainer.frequency = 24.hours
+    7. jobs.aggregates.invalidProjectCheck.frequency = 24.hours
+    8. jobs.aggregates.watermarker.frequency = 24.hours
+    9. CONNECTION.POOL.GROUP.MAXCONNECTIONS = 100
+    10. CONNECTION.POOL.USER.MAXCONNECTIONS = 100
+    11. query.includeComments.general.queryId = true (to bust query cache on target DW)
+    12. aggregates.newPredictorEnabled = false.
+    13. tables.create.partitions.allowIncompleteEstimates.enabled = true
+    14. tables.create.partitions.maximumEstimatedNumberOfPartitions = 1000000

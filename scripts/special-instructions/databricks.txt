@@ -1,0 +1,9 @@
+1. Have to change these defaults:
+
+spark.sql.hive.metastore.version 1.2.1
+spark.sql.hive.metastore.jars builtin
+spark.sql.broadcastTimeout -1
+
+2. Install AtScale HoneyBee JAR for HLL support in Cluster Libraries link
+
+Pricing: https://azure.microsoft.com/en-us/pricing/details/databricks/

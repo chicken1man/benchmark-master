@@ -1,0 +1,16 @@
+---
+#
+# BigQuery Reporting Project Settings
+#
+google_credentials_path: bigquery-credentials.json
+google_datawarehousename: benchmark-251817
+google_datasetname: benchmark
+google_location: US
+
+#
+# THE FOLLOWING SETTINGS SHOULD BE DEFINED IN CONFIG_CUSTOM.YML
+#
+
+...
+
+

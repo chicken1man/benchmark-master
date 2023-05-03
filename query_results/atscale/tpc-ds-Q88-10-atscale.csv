@@ -1,0 +1,30 @@
+﻿,
+"SELECT
+    `TPC-DS Benchmark Model`.`Sold d_morning _time_tier` AS `sold_d_morning__time_tier`,
+    SUM(`TPC-DS Benchmark Model`.`m_SS Row Counter_sum`) AS `sum_m_ss_row_counter_sum_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    ( ( (
+                `TPC-DS Benchmark Model`.`d_hd_dep_count` = 2
+            AND `TPC-DS Benchmark Model`.`d_hd_vehicle_count` <= 4 )
+        OR  (
+                `TPC-DS Benchmark Model`.`d_hd_dep_count` = 0
+            AND `TPC-DS Benchmark Model`.`d_hd_vehicle_count` <= 2 )
+        OR  (
+                `TPC-DS Benchmark Model`.`d_hd_dep_count` = -1
+            AND `TPC-DS Benchmark Model`.`d_hd_vehicle_count` <= 1 ) )
+    AND `TPC-DS Benchmark Model`.`d_store_name` = 'ese' )
+    AND `TPC-DS Benchmark Model`.`Sold d_morning _time_tier` <> 'Other'
+GROUP BY
+    1",
+,
+sold_d_morning__time_tier,sum_m_ss_row_counter_sum_ok
+08:30 to 09:00,11813314
+12:00 to 12:30,23598991
+11:30 to 12:00,20670561
+10:00 to 10:30,35424731
+09:30 to 10:00,23649375
+11:00 to 11:30,20569612
+09:00 to 09:30,23614247
+10:30 to 11:00,35367530

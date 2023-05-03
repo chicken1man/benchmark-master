@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "SnowFlake.2019Q3" -j "../../../jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-Raw.jmx" -d "Snowflake" -s "jdbc:snowflake://da37161.snowflakecomputing.com/?warehouse=BENCHMARK_3XLARGE&db=BENCHMARK" -u "user-name-goes-here" -p "password-goes-here" -l "../../../Benchmark-Results"

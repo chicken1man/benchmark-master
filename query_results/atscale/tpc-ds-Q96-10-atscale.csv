@@ -1,0 +1,19 @@
+﻿
+"--set use_local_cache = false
+ -- TPC-DS_query 7
+SELECT
+    SUM(`tpc_ds_benchmark_model`.`m_SS Row Counter_sum`) AS `sum_m_ss_row_counter_sum_ok`
+FROM
+    `tpc-ds benchmark model - bigquery`.`tpc-ds benchmark model` `tpc_ds_benchmark_model`
+WHERE
+    `tpc_ds_benchmark_model`.`Sold d_hour` = 8
+AND `tpc_ds_benchmark_model`.`Sold d_minute` >= 30
+AND `tpc_ds_benchmark_model`.`d_hd_dep_count` = 5
+AND `tpc_ds_benchmark_model`.`d_store_name` = 'ese'
+GROUP BY
+    1
+ORDER BY
+    1 LIMIT 100"
+
+sum_m_ss_row_counter_sum_ok
+7080997

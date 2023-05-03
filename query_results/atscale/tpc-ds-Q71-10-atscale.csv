@@ -1,0 +1,126 @@
+﻿,,,,
+"SELECT
+    `TPC-DS Benchmark Model`.`d_product_brand_id`            AS `d_product_brand_id`,
+    `TPC-DS Benchmark Model`.`d_product_brand_name`          AS `d_product_brand_name`,
+    `TPC-DS Benchmark Model`.`Sold d_hour`                   AS `sold_d_hour`,
+    `TPC-DS Benchmark Model`.`Sold d_minute`                 AS `sold_d_minute`,
+    SUM( `TPC-DS Benchmark Model`.`Total  Ext Sales Price` ) AS `sum_total__ext_sales_price_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    `TPC-DS Benchmark Model`.`Sold Calendar Year-Week` = 1998
+AND `TPC-DS Benchmark Model`.`Sold d_meal_time` IN ('breakfast',
+                                                    'dinner')
+AND `TPC-DS Benchmark Model`.`Sold d_month_of_year` = 12
+AND `TPC-DS Benchmark Model`.`d_product_manager_id` = 1
+GROUP BY
+    1,
+    2,
+    4,
+    5
+ORDER BY
+    5 DESC,
+    1
+LIMIT 100",,,,
+,,,,
+d_product_brand_id,d_product_brand_name,sold_d_hour,sold_d_minute,sum_total__ext_sales_price_ok
+4001001,amalgedu pack #1,17,35,2568893.46
+2003001,exportiimporto #1,17,52,2438427.32
+4004001,edu packedu pack #1,17,22,2384594.58
+1001001,amalgamalg #1,17,41,2334862.47
+1003001,exportiamalg #1,17,25,2302924.21
+3003001,exportiexporti #1,17,42,2300820.49
+2003001,exportiimporto #1,17,36,2261972.78
+4001001,amalgedu pack #1,17,46,2258607.12
+3004001,edu packexporti #1,17,10,2246121.3
+3004001,edu packexporti #1,17,12,2200419.77
+1001001,amalgamalg #1,19,31,2157686.24
+1004001,edu packamalg #1,17,27,2139248.75
+3004001,edu packexporti #1,17,36,2137418.25
+2003001,exportiimporto #1,17,34,2131877.51
+4001001,amalgedu pack #1,19,31,2128273.88
+1004001,edu packamalg #1,17,50,2122612.56
+1003001,exportiamalg #1,19,56,2112906.53
+1003001,exportiamalg #1,17,12,2112028.76
+2002001,importoimporto #1,17,17,2110035.58
+2003001,exportiimporto #1,17,12,2105837.17
+4001001,amalgedu pack #1,17,41,2101761.97
+2001001,amalgimporto #1,17,21,2097704.81
+3004001,edu packexporti #1,17,49,2093332.51
+2002001,importoimporto #1,17,59,2091327.93
+2001001,amalgimporto #1,17,24,2077365.41
+3004001,edu packexporti #1,19,53,2075360.56
+1003001,exportiamalg #1,17,53,2070504.75
+2003001,exportiimporto #1,17,46,2065975.54
+4002001,importoedu pack #1,17,40,2064625.98
+1004001,edu packamalg #1,17,22,2057569.42
+3001001,amalgexporti #1,17,36,2039376.71
+1004001,edu packamalg #1,17,44,2036291.19
+2003001,exportiimporto #1,17,1,2024422.34
+2002001,importoimporto #1,19,32,2013581.32
+4004001,edu packedu pack #1,17,0,2013332.03
+1004001,edu packamalg #1,17,6,2010412.74
+1004001,edu packamalg #1,17,18,2009310.82
+2002001,importoimporto #1,17,0,2007793.94
+4001001,amalgedu pack #1,17,59,2005968.57
+2003001,exportiimporto #1,18,13,2002594.55
+1001001,amalgamalg #1,17,25,1999357.19
+2003001,exportiimporto #1,17,55,1995615.75
+2002001,importoimporto #1,17,33,1993337.93
+1003001,exportiamalg #1,17,49,1991588.09
+1004001,edu packamalg #1,17,46,1989282.38
+4001001,amalgedu pack #1,19,56,1988298.2
+1004001,edu packamalg #1,17,0,1987191.15
+3001001,amalgexporti #1,18,3,1985548.37
+1004001,edu packamalg #1,19,20,1983521.13
+4001001,amalgedu pack #1,17,19,1981830.94
+2002001,importoimporto #1,17,26,1981679.07
+2002001,importoimporto #1,19,50,1981587.93
+2003001,exportiimporto #1,17,19,1977088.36
+2001001,amalgimporto #1,17,26,1976388.3
+3001001,amalgexporti #1,17,39,1975792.45
+1004001,edu packamalg #1,17,33,1964865
+4004001,edu packedu pack #1,17,58,1958769.35
+2002001,importoimporto #1,17,57,1958732.33
+1003001,exportiamalg #1,17,35,1950421.6
+3004001,edu packexporti #1,17,2,1948773.99
+3004001,edu packexporti #1,17,20,1948417.75
+2002001,importoimporto #1,19,49,1947595.7
+2003001,exportiimporto #1,17,58,1941422.19
+4004001,edu packedu pack #1,17,18,1941110.24
+3001001,amalgexporti #1,17,18,1940944.63
+4001001,amalgedu pack #1,17,15,1940931.21
+3004001,edu packexporti #1,17,30,1940738.06
+4001001,amalgedu pack #1,17,32,1940685.3
+1004001,edu packamalg #1,19,14,1940423.26
+1004001,edu packamalg #1,17,52,1939191.5
+2003001,exportiimporto #1,17,53,1938213.22
+1003001,exportiamalg #1,17,40,1938090.73
+1004001,edu packamalg #1,17,59,1936500.52
+4004001,edu packedu pack #1,17,44,1935884.06
+3004001,edu packexporti #1,17,15,1931872.68
+3001001,amalgexporti #1,17,2,1930024.8
+4001001,amalgedu pack #1,17,17,1926923.25
+3004001,edu packexporti #1,19,22,1926649.52
+3001001,amalgexporti #1,17,41,1925449.4
+1001001,amalgamalg #1,19,39,1925058.1
+1004001,edu packamalg #1,17,31,1923498.27
+1001001,amalgamalg #1,17,54,1920869.07
+2002001,importoimporto #1,17,20,1920217.24
+4001001,amalgedu pack #1,17,31,1919927.62
+3004001,edu packexporti #1,17,16,1919899.97
+1003001,exportiamalg #1,17,23,1919180.42
+3004001,edu packexporti #1,17,37,1919110.77
+2002001,importoimporto #1,17,37,1918929.32
+4001001,amalgedu pack #1,17,40,1917324.9
+4001001,amalgedu pack #1,17,47,1915657.88
+1004001,edu packamalg #1,19,9,1913212.92
+4004001,edu packedu pack #1,17,35,1909848.12
+1001001,amalgamalg #1,17,51,1907087.71
+2003001,exportiimporto #1,19,3,1900559.64
+2003001,exportiimporto #1,19,29,1900030.1
+2003001,exportiimporto #1,17,38,1898293.33
+1004001,edu packamalg #1,17,48,1897883.65
+3001001,amalgexporti #1,19,37,1892750.53
+2002001,importoimporto #1,17,30,1889808.02
+3004001,edu packexporti #1,17,42,1888203.13

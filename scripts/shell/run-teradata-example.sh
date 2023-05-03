@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "Test.Teradata" -j "../../../jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-Raw-Teradata.jmx" -d "Teradata" -s "jdbc:teradata://ec2-34-208-188-99.us-west-2.compute.amazonaws.com" -u "dbc" -p "password" -l "../../../Benchmark-Results" -m "test"

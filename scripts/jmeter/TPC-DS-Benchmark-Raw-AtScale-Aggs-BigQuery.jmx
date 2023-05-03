@@ -1,0 +1,2805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/hadoop-common.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/hive-exec.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/hive-jdbc.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/hive-metastore.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/hive-service.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/httpclient.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/httpcore.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/libfb303-0.9.2.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/libthrift-0.9.2.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/log4j-1.2.16.jar,/Users/rwidjaja/Desktop/jmeter-hive-hdp-master/slf4j-api.jar</stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="NumberOfThreads" elementType="Argument">
+            <stringProp name="Argument.name">NumberOfThreads</stringProp>
+            <stringProp name="Argument.value">${__P(NumberOfThreads,1)}</stringProp>
+            <stringProp name="Argument.desc">Number of concurrent threads</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NumberOfLoops" elementType="Argument">
+            <stringProp name="Argument.name">NumberOfLoops</stringProp>
+            <stringProp name="Argument.value">${__P(NumberOfLoops,1)}</stringProp>
+            <stringProp name="Argument.desc">Number of Queries Run per thread</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="JDBCConnectionString" elementType="Argument">
+            <stringProp name="Argument.name">JDBCConnectionString</stringProp>
+            <stringProp name="Argument.value">${__P(JDBCConnectionString,jdbc:bigquery://host:443/;ProjectId=benchmark-251817;DefaultDataset=TPCDS_10TB;Timeout=7200;OAuthType=0;OAuthServiceAcctEmail=benchmark@benchmark-251817.iam.gserviceaccount.com;OAuthPvtKeyPath=bigquery-credentials.json)}</stringProp>
+            <stringProp name="Argument.desc">AtScale Server Host</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DriverClass" elementType="Argument">
+            <stringProp name="Argument.name">DriverClass</stringProp>
+            <stringProp name="Argument.value">${__P(DriverClass,com.simba.googlebigquery.jdbc42.Driver)}</stringProp>
+            <stringProp name="Argument.desc">JDBC Driver Class</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UserName" elementType="Argument">
+            <stringProp name="Argument.name">UserName</stringProp>
+            <stringProp name="Argument.value">${__P(UserName,queryuser)}</stringProp>
+            <stringProp name="Argument.desc">User name</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Password" elementType="Argument">
+            <stringProp name="Argument.name">Password</stringProp>
+            <stringProp name="Argument.value">${__P(Password,@scale800)}</stringProp>
+            <stringProp name="Argument.desc">Password</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SessionStatement1" elementType="Argument">
+            <stringProp name="Argument.name">SessionStatement1</stringProp>
+            <stringProp name="Argument.value">${__P(SessionStatement1,)}</stringProp>
+            <stringProp name="Argument.desc">Session Init Statement #1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SessionStatement2" elementType="Argument">
+            <stringProp name="Argument.name">SessionStatement2</stringProp>
+            <stringProp name="Argument.value">${__P(SessionStatement2,)}</stringProp>
+            <stringProp name="Argument.desc">Session Init Statement #2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SessionStatement3" elementType="Argument">
+            <stringProp name="Argument.name">SessionStatement3</stringProp>
+            <stringProp name="Argument.value">${__P(SessionStatement3,)}</stringProp>
+            <stringProp name="Argument.desc">Session Init Statement #3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SessionStatement4" elementType="Argument">
+            <stringProp name="Argument.name">SessionStatement4</stringProp>
+            <stringProp name="Argument.value">${__P(SessionStatement4,)}</stringProp>
+            <stringProp name="Argument.desc">Session Init Statement #4</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SessionStatement5" elementType="Argument">
+            <stringProp name="Argument.name">SessionStatement5</stringProp>
+            <stringProp name="Argument.value">${__P(SessionStatement5,)}</stringProp>
+            <stringProp name="Argument.desc">Session Init Statement #5</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Platform" elementType="Argument">
+            <stringProp name="Argument.name">Platform</stringProp>
+            <stringProp name="Argument.value">${__P(Platform,BigQuery)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Platform name (i.e. AtScale, Snowflake, Redshift)</stringProp>
+          </elementProp>
+          <elementProp name="Label" elementType="Argument">
+            <stringProp name="Argument.name">Label</stringProp>
+            <stringProp name="Argument.value">${__P(Label,InteractiveRun)}</stringProp>
+            <stringProp name="Argument.desc">Run label to identify this run</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group SQL - TCP-DS AtScale Aggs Test" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${NumberOfLoops}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${NumberOfThreads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
+          <stringProp name="maximumValue">100000</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">CACHE_BUSTER_000000</stringProp>
+          <boolProp name="perThread">true</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">CacheBuster</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">SELECT 1</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="dbUrl">${JDBCConnectionString}</stringProp>
+          <stringProp name="driver">${DriverClass}</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password">${Password}</stringProp>
+          <stringProp name="poolMax">${NumberOfThreads}</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username">${UserName}</stringProp>
+          <stringProp name="initQuery"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="JDBC PreProcessor - Session Statement 1" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">${SessionStatement1}</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCPreProcessor>
+        <hashTree/>
+        <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="JDBC PreProcessor - Session Statement 2" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">${SessionStatement2}</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCPreProcessor>
+        <hashTree/>
+        <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="JDBC PreProcessor - Session Statement 3" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">${SessionStatement3}</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCPreProcessor>
+        <hashTree/>
+        <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="JDBC PreProcessor - Session Statement 4" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">${SessionStatement4}</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCPreProcessor>
+        <hashTree/>
+        <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="JDBC PreProcessor - Session Statement 5" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">${SessionStatement5}</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCPreProcessor>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 2 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 2
+ -- ${CacheBuster}
+SELECT
+   t_312.sold_calendar_week_gbakc4 AS sold_calendar_week,
+   t_312.sold_d_day_name_we_gbakc5 AS sold_d_day_name_week,
+   t_312.sold_d_week_seg_gbakc6 AS sold_d_week_seg,
+   t_312.sum_web_catalog_sa_gbakc7 AS sum_web_catalog_sales_price_growth_ok
+FROM
+(
+   SELECT
+      t_286.sold_calendar_week_gbakc4 AS sold_calendar_week_gbakc4,
+      t_286.sold_d_day_name_we_gbakc5 AS sold_d_day_name_we_gbakc5,
+      t_286.sold_d_week_seg_gbakc6 AS sold_d_week_seg_gbakc6,
+      CASE WHEN COALESCE(MIN(t_286.c_131), 0) = 0 THEN (SAFE_CAST(&apos;Infinity&apos; AS FLOAT64) * SAFE_CAST(SIGN(CASE WHEN COALESCE(MIN(t_286.c_132), MIN(t_286.c_133)) IS NULL THEN NULL ELSE (COALESCE(MIN(t_286.c_132), 0) + COALESCE(MIN(t_286.c_133), 0)) END) AS FLOAT64)) ELSE CASE WHEN MIN(t_286.c_131) = 0 THEN NULL ELSE (CASE WHEN COALESCE(MIN(t_286.c_132), MIN(t_286.c_133)) IS NULL THEN NULL ELSE (COALESCE(MIN(t_286.c_132), 0) + COALESCE(MIN(t_286.c_133), 0)) END / MIN(t_286.c_131)) END END AS sum_web_catalog_sa_gbakc7,
+      t_286.sold_calendar_week_gbakc1 AS sold_calendar_week_gbakc1,
+      t_286.sold_d_day_name_we_gbakc2 AS sold_d_day_name_we_gbakc2,
+      t_286.sold_d_week_seg_gbakc3 AS sold_d_week_seg_gbakc3
+   FROM
+   (
+      SELECT
+         t_285.sold_calendar_week_gbakc4 AS sold_calendar_week_gbakc4,
+         t_285.sold_d_day_name_we_gbakc5 AS sold_d_day_name_we_gbakc5,
+         t_285.sold_d_week_seg_gbakc6 AS sold_d_week_seg_gbakc6,
+         MIN(t_285.c_131) AS c_131,
+         MIN(t_285.c_132) AS c_132,
+         MIN(t_285.c_133) AS c_133,
+         t_285.sold_calendar_week_gbakc1 AS sold_calendar_week_gbakc1,
+         t_285.sold_d_day_name_we_gbakc2 AS sold_d_day_name_we_gbakc2,
+         t_285.sold_d_week_seg_gbakc3 AS sold_d_week_seg_gbakc3
+      FROM
+      (
+            SELECT
+               t_257.sold_calendar_week_c256 AS sold_calendar_week_gbakc4,
+               t_257.sold_d_day_name_we_c249 AS sold_d_day_name_we_gbakc5,
+               t_257.sold_d_week_seg_c1_c250 AS sold_d_week_seg_gbakc6,
+               SAFE_CAST(NULL AS NUMERIC) AS c_131,
+               SUM(t_257.m_ws_ext_sales_pri_c251) AS c_132,
+               SUM(t_257.m_cs_ext_sales_pri_c248) AS c_133,
+               t_257.key_c5_c255 AS sold_calendar_week_gbakc1,
+               t_257.key_c6_c252 AS sold_d_day_name_we_gbakc2,
+               t_257.key_c3_c254 AS sold_d_week_seg_gbakc3
+            FROM
+            (
+               SELECT
+                  as_agg_7ab9377d_q2_t247.key_c3 AS key_c3_c254,
+                  as_agg_7ab9377d_q2_t247.key_c5 AS key_c5_c255,
+                  as_agg_7ab9377d_q2_t247.key_c6 AS key_c6_c252,
+                  as_agg_7ab9377d_q2_t247.m_cs_ext_sales_price_sum_c11 AS m_cs_ext_sales_pri_c248,
+                  as_agg_7ab9377d_q2_t247.m_ws_ext_sales_price_sum_c14 AS m_ws_ext_sales_pri_c251,
+                  as_agg_7ab9377d_q2_t247.sold_calendar_week_c7 AS sold_calendar_week_c256,
+                  as_agg_7ab9377d_q2_t247.sold_calendar_year_week_c8 AS sold_calendar_year_c253,
+                  as_agg_7ab9377d_q2_t247.sold_d_day_name_week_c9 AS sold_d_day_name_we_c249,
+                  as_agg_7ab9377d_q2_t247.sold_d_week_seg_c10 AS sold_d_week_seg_c1_c250
+               FROM
+                  `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_7ab9377d_q2 AS as_agg_7ab9377d_q2_t247
+               WHERE
+                  as_agg_7ab9377d_q2_t247.sold_calendar_year_week_c8 IN (2000, 2001)
+            ) AS t_257
+            WHERE
+               true
+            GROUP BY
+               1,
+               2,
+               3,
+               7,
+               8,
+               9
+         UNION ALL
+            SELECT
+               t_283.sold_calendar_week_gbakc4 AS sold_calendar_week_gbakc4,
+               t_283.sold_d_day_name_we_gbakc5 AS sold_d_day_name_we_gbakc5,
+               t_283.sold_d_week_seg_gbakc6 AS sold_d_week_seg_gbakc6,
+               MIN(t_283.c_131) AS c_131,
+               SAFE_CAST(NULL AS NUMERIC) AS c_132,
+               SAFE_CAST(NULL AS NUMERIC) AS c_133,
+               t_283.sold_calendar_week_gbakc1 AS sold_calendar_week_gbakc1,
+               t_283.sold_d_day_name_we_gbakc2 AS sold_d_day_name_we_gbakc2,
+               t_283.sold_d_week_seg_gbakc3 AS sold_d_week_seg_gbakc3
+            FROM
+            (
+               SELECT
+                  COALESCE(t_282.c_124, t_278.sold_calendar_week_gbakc4) AS sold_calendar_week_gbakc4,
+                  t_278.sold_d_day_name_we_gbakc5 AS sold_d_day_name_we_gbakc5,
+                  COALESCE(t_282.c_126, t_278.sold_d_week_seg_gbakc6) AS sold_d_week_seg_gbakc6,
+                  MIN(t_278.c_131) AS c_131,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_132,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_133,
+                  COALESCE(t_282.c_191, t_278.sold_calendar_week_gbakc1) AS sold_calendar_week_gbakc1,
+                  t_278.sold_d_day_name_we_gbakc2 AS sold_d_day_name_we_gbakc2,
+                  COALESCE(t_282.c_147, t_278.sold_d_week_seg_gbakc3) AS sold_d_week_seg_gbakc3,
+                  COALESCE(t_282.c_173, t_278.c_176) AS c_176
+               FROM
+               (
+                  SELECT
+                     t_281.c_191 AS c_191,
+                     t_281.c_200 AS c_200,
+                     t_272.c_173 AS c_173,
+                     t_272.c_124 AS c_124,
+                     t_272.c_147 AS c_147,
+                     t_272.c_126 AS c_126
+                  FROM
+                  (
+                     SELECT
+                        t_280.c_194 AS c_191,
+                        t_270.c_198 AS c_200
+                     FROM
+                     (
+                        SELECT
+                           t_267.rn_c193 AS rn_c193,
+                           t_267.c_194 AS c_195,
+                           t_267.c_194 AS c_194,
+                           COALESCE(t_279.c_189, t_267.c_194) AS c_179
+                        FROM
+                        (
+                           SELECT
+                              t_261.c_184 AS c_184,
+                              t_264.c_187 AS c_189
+                           FROM
+                           (
+                              SELECT
+                                 as_agg_d7a25ba5_sl_t259.key_c1 AS c_184,
+                                 ROW_NUMBER() OVER (ORDER BY as_agg_d7a25ba5_sl_t259.sold_calendar_week_c2 ASC ) AS rn_c183,
+                                 as_agg_d7a25ba5_sl_t259.sold_calendar_week_c2 AS c_181
+                              FROM
+                                 `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d7a25ba5_sldclndrwk AS as_agg_d7a25ba5_sl_t259
+                              WHERE
+                                 true
+                              GROUP BY
+                                 1,
+                                 3
+                           ) AS t_261
+                           JOIN
+                           (
+                              SELECT
+                                 as_agg_d7a25ba5_sl_t262.key_c1 AS c_187,
+                                 ROW_NUMBER() OVER (ORDER BY as_agg_d7a25ba5_sl_t262.sold_calendar_week_c2 ASC ) AS rn_c186,
+                                 as_agg_d7a25ba5_sl_t262.sold_calendar_week_c2 AS c_181
+                              FROM
+                                 `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d7a25ba5_sldclndrwk AS as_agg_d7a25ba5_sl_t262
+                              WHERE
+                                 true
+                              GROUP BY
+                                 1,
+                                 3
+                           ) AS t_264
+                           ON
+                              (t_261.rn_c183 + SAFE_CAST(53 AS INT64)) = t_264.rn_c186
+                           GROUP BY
+                              1,
+                              2
+                        ) AS t_279
+                        JOIN
+                        (
+                           SELECT
+                              as_agg_ec4e8b03_no_t265.key_c1 AS c_194,
+                              ROW_NUMBER() OVER (PARTITION BY as_agg_ec4e8b03_no_t265.key_c1) AS rn_c193
+                           FROM
+                              `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_ec4e8b03_none AS as_agg_ec4e8b03_no_t265
+                           WHERE
+                              true
+                           GROUP BY
+                              1
+                        ) AS t_267
+                        ON
+                           t_279.c_184 = t_267.c_194
+                        GROUP BY
+                           1,
+                           2,
+                           3,
+                           4
+                     ) AS t_280
+                     JOIN
+                     (
+                        SELECT
+                           as_agg_ec4e8b03_no_t268.key_c1 AS c_198,
+                           ROW_NUMBER() OVER (PARTITION BY as_agg_ec4e8b03_no_t268.key_c1) AS rn_c197
+                        FROM
+                           `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_ec4e8b03_none AS as_agg_ec4e8b03_no_t268
+                        WHERE
+                           true
+                        GROUP BY
+                           1
+                     ) AS t_270
+                     ON
+                        t_280.c_179 = t_270.c_198
+                     AND
+                        t_280.rn_c193 = t_270.rn_c197
+                     GROUP BY
+                        1,
+                        2
+                  ) AS t_281
+                  JOIN
+                  (
+                     SELECT
+                        as_agg_166c21ab_sl_t271.key_c4 AS c_202,
+                        as_agg_166c21ab_sl_t271.key_c4 AS c_145,
+                        as_agg_166c21ab_sl_t271.sold_calendar_year_week_c6 AS c_173,
+                        as_agg_166c21ab_sl_t271.sold_calendar_week_c5 AS c_124,
+                        as_agg_166c21ab_sl_t271.key_c2 AS c_147,
+                        as_agg_166c21ab_sl_t271.sold_d_week_seg_c7 AS c_126
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_166c21ab_sldclndrwk_sld AS as_agg_166c21ab_sl_t271
+                     WHERE
+                        true
+                     GROUP BY
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                  ) AS t_272
+                  ON
+                     t_281.c_191 = t_272.c_145
+                  GROUP BY
+                     1,
+                     2,
+                     3,
+                     4,
+                     5,
+                     6
+               ) AS t_282
+               JOIN
+               (
+                  SELECT
+                     as_agg_7ab9377d_q2_t273.sold_calendar_week_c7 AS sold_calendar_week_gbakc4,
+                     as_agg_7ab9377d_q2_t273.sold_d_day_name_week_c9 AS sold_d_day_name_we_gbakc5,
+                     as_agg_7ab9377d_q2_t273.sold_d_week_seg_c10 AS sold_d_week_seg_gbakc6,
+                     CASE WHEN COALESCE(as_agg_7ab9377d_q2_t273.m_ws_ext_sales_price_sum_c14, as_agg_7ab9377d_q2_t273.m_cs_ext_sales_price_sum_c11) IS NULL THEN NULL ELSE (COALESCE(as_agg_7ab9377d_q2_t273.m_ws_ext_sales_price_sum_c14, 0) + COALESCE(as_agg_7ab9377d_q2_t273.m_cs_ext_sales_price_sum_c11, 0)) END AS c_131,
+                     as_agg_7ab9377d_q2_t273.key_c5 AS sold_calendar_week_gbakc1,
+                     as_agg_7ab9377d_q2_t273.key_c6 AS sold_d_day_name_we_gbakc2,
+                     as_agg_7ab9377d_q2_t273.key_c3 AS sold_d_week_seg_gbakc3,
+                     as_agg_7ab9377d_q2_t273.key_c5 AS c_177,
+                     as_agg_7ab9377d_q2_t273.sold_calendar_year_week_c8 AS c_176
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_7ab9377d_q2 AS as_agg_7ab9377d_q2_t273
+                  WHERE
+                     true
+               ) AS t_278
+               ON
+                  t_282.c_200 = t_278.c_177
+               WHERE
+                  COALESCE(t_282.c_173, t_278.c_176) IN (2000, 2001)
+               GROUP BY
+                  1,
+                  2,
+                  3,
+                  7,
+                  8,
+                  9,
+                  10
+            ) AS t_283
+            GROUP BY
+               1,
+               2,
+               3,
+               7,
+               8,
+               9
+      ) AS t_285
+      GROUP BY
+         1,
+         2,
+         3,
+         7,
+         8,
+         9
+   ) AS t_286
+   GROUP BY
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+) AS t_312;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 7 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">-- ATSCALE_AGGS_query7
+ -- ${CacheBuster}
+SELECT
+   t_120.d_product_item_id_gbakc2 AS d_product_item_id,
+   t_120.avg_m_ss_quantity__gbakc3 AS avg_m_ss_quantity_avg_ok,
+   t_120.avg_m_ss_list_pric_gbakc4 AS avg_m_ss_list_price_avg_ok,
+   t_120.avg_m_ss_coupon_am_gbakc5 AS avg_m_ss_coupon_amt_avg_ok,
+   t_120.avg_m_ss_sales_pri_gbakc6 AS avg_m_ss_sales_price_avg_ok
+FROM
+(
+   SELECT
+      t_70.d_product_item_id__c67 AS d_product_item_id_gbakc2,
+      CASE WHEN SUM(t_70.countattrname_m_ss_c65) = 0 THEN NULL ELSE (SUM(t_70.sumattrname_m_ss_q_c69) / SUM(t_70.countattrname_m_ss_c65)) END AS avg_m_ss_quantity__gbakc3,
+      CASE WHEN SUM(t_70.countattrname_m_ss_c62) = 0 THEN NULL ELSE (SUM(t_70.sumattrname_m_ss_l_c60) / SUM(t_70.countattrname_m_ss_c62)) END AS avg_m_ss_list_pric_gbakc4,
+      CASE WHEN SUM(t_70.countattrname_m_ss_c54) = 0 THEN NULL ELSE (SUM(t_70.sumattrname_m_ss_c_c55) / SUM(t_70.countattrname_m_ss_c54)) END AS avg_m_ss_coupon_am_gbakc5,
+      CASE WHEN SUM(t_70.countattrname_m_ss_c64) = 0 THEN NULL ELSE (SUM(t_70.sumattrname_m_ss_s_c56) / SUM(t_70.countattrname_m_ss_c64)) END AS avg_m_ss_sales_pri_gbakc6,
+      t_70.key_c11_c58 AS d_product_item_id_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_d90a8426_q7_t53.countattrname_m_ss_coupon_c32 AS countattrname_m_ss_c54,
+         as_agg_d90a8426_q7_t53.countattrname_m_ss_list_p_c34 AS countattrname_m_ss_c62,
+         as_agg_d90a8426_q7_t53.countattrname_m_ss_sales__c36 AS countattrname_m_ss_c64,
+         as_agg_d90a8426_q7_t53.countattrname_m_ss_quanti_c22 AS countattrname_m_ss_c65,
+         as_agg_d90a8426_q7_t53.d_cd_education_status_c15 AS d_cd_education_sta_c66,
+         as_agg_d90a8426_q7_t53.d_cd_gender_c16 AS d_cd_gender_c16_c59,
+         as_agg_d90a8426_q7_t53.d_cd_marital_status_c17 AS d_cd_marital_statu_c63,
+         as_agg_d90a8426_q7_t53.d_channel_email_c18 AS d_channel_email_c1_c61,
+         as_agg_d90a8426_q7_t53.d_channel_event_c19 AS d_channel_event_c1_c68,
+         as_agg_d90a8426_q7_t53.d_product_item_id_c20 AS d_product_item_id__c67,
+         as_agg_d90a8426_q7_t53.key_c11 AS key_c11_c58,
+         as_agg_d90a8426_q7_t53.sold_calendar_year_c14 AS sold_calendar_year_c57,
+         as_agg_d90a8426_q7_t53.sumattrname_m_ss_coupon_a_c31 AS sumattrname_m_ss_c_c55,
+         as_agg_d90a8426_q7_t53.sumattrname_m_ss_list_pri_c33 AS sumattrname_m_ss_l_c60,
+         as_agg_d90a8426_q7_t53.sumattrname_m_ss_quantity_c21 AS sumattrname_m_ss_q_c69,
+         as_agg_d90a8426_q7_t53.sumattrname_m_ss_sales_pr_c35 AS sumattrname_m_ss_s_c56
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d90a8426_q7_q26 AS as_agg_d90a8426_q7_t53
+      WHERE
+         as_agg_d90a8426_q7_t53.d_cd_marital_status_c17 = &apos;M&apos;
+      AND
+         as_agg_d90a8426_q7_t53.d_cd_gender_c16 = &apos;M&apos;
+      AND
+         as_agg_d90a8426_q7_t53.d_cd_education_status_c15 = &apos;4 yr Degree&apos;
+      AND
+      (
+            as_agg_d90a8426_q7_t53.d_channel_email_c18 = &apos;N&apos;
+         OR
+            as_agg_d90a8426_q7_t53.d_channel_event_c19 = &apos;N&apos; )
+      AND
+         as_agg_d90a8426_q7_t53.sold_calendar_year_c14 = 2001
+   ) AS t_70
+   WHERE
+      true
+   GROUP BY
+      1,
+      6
+) AS t_120
+ORDER BY
+   1 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 13 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 13
+  -- ${CacheBuster}
+SELECT
+   CASE WHEN SUM(t_61.countattrname_m_ss_c52) = 0 THEN NULL ELSE (SUM(t_61.sumattrname_m_ss_q_c55) / SUM(t_61.countattrname_m_ss_c52)) END AS sum_m_ss_quantity_avg_ok,
+   CASE WHEN SUM(t_61.countattrname_m_ss_c53) = 0 THEN NULL ELSE (SUM(t_61.sumattrname_m_ss_e_c48) / SUM(t_61.countattrname_m_ss_c53)) END AS sum_m_ss_ext_sales_price_avg_ok,
+   CASE WHEN SUM(t_61.countattrname_m_ss_c47) = 0 THEN NULL ELSE (SUM(t_61.sumattrname_m_ss_e_c60) / SUM(t_61.countattrname_m_ss_c47)) END AS sum_m_ss_ext_wholesale_cost_avg_ok,
+   SUM(t_61.m_ss_ext_wholesale_c49) AS sum_m_ss_ext_wholesale_cost_sum_ok
+FROM
+(
+   SELECT
+      as_agg_d60197f2_q1_t45.countattrname_m_ss_ext_wh_c24 AS countattrname_m_ss_c47,
+      as_agg_d60197f2_q1_t45.countattrname_m_ss_quanti_c26 AS countattrname_m_ss_c52,
+      as_agg_d60197f2_q1_t45.countattrname_m_ss_ext_sa_c22 AS countattrname_m_ss_c53,
+      as_agg_d60197f2_q1_t45.d_cd_education_status_c14 AS d_cd_education_sta_c51,
+      as_agg_d60197f2_q1_t45.d_cd_marital_status_c15 AS d_cd_marital_statu_c58,
+      as_agg_d60197f2_q1_t45.d_customer_country_c16 AS d_customer_country_c54,
+      as_agg_d60197f2_q1_t45.d_customer_state_c17 AS d_customer_state_c_c46,
+      as_agg_d60197f2_q1_t45.d_hd_dep_count_c18 AS d_hd_dep_count_c18_c59,
+      as_agg_d60197f2_q1_t45.d_net_profit_tier_c19 AS d_net_profit_tier__c56,
+      as_agg_d60197f2_q1_t45.d_sales_price_tier_c20 AS d_sales_price_tier_c50,
+      as_agg_d60197f2_q1_t45.m_ss_ext_wholesale_cost_s_c27 AS m_ss_ext_wholesale_c49,
+      as_agg_d60197f2_q1_t45.sold_calendar_year_week_c13 AS sold_calendar_year_c57,
+      as_agg_d60197f2_q1_t45.sumattrname_m_ss_ext_sale_c21 AS sumattrname_m_ss_e_c48,
+      as_agg_d60197f2_q1_t45.sumattrname_m_ss_ext_whol_c23 AS sumattrname_m_ss_e_c60,
+      as_agg_d60197f2_q1_t45.sumattrname_m_ss_quantity_c25 AS sumattrname_m_ss_q_c55
+   FROM
+      `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d60197f2_q13 AS as_agg_d60197f2_q1_t45
+   WHERE
+   (
+            as_agg_d60197f2_q1_t45.d_net_profit_tier_c19 IN (&apos;100-150&apos;, &apos;150-200&apos;)
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_country_c16 = &apos;United States&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_state_c17 IN (&apos;MS&apos;, &apos;NC&apos;, &apos;TX&apos;)
+      OR
+            as_agg_d60197f2_q1_t45.d_net_profit_tier_c19 IN (&apos;150-200&apos;, &apos;200-250&apos;, &apos;250-300&apos;)
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_country_c16 = &apos;United States&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_state_c17 IN (&apos;TN&apos;, &apos;WA&apos;, &apos;NE&apos;)
+      OR
+            as_agg_d60197f2_q1_t45.d_net_profit_tier_c19 IN (&apos; 50-100&apos;, &apos;100-150&apos;, &apos;150-200&apos;, &apos;200-250&apos;)
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_country_c16 = &apos;United States&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_customer_state_c17 IN (&apos;MA&apos;, &apos;OR&apos;, &apos;UT&apos;) )
+   AND
+      as_agg_d60197f2_q1_t45.sold_calendar_year_week_c13 = 2001
+   AND
+   (
+            as_agg_d60197f2_q1_t45.d_sales_price_tier_c20 = &apos;100-150&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_hd_dep_count_c18 = 3
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_education_status_c14 = &apos;4 yr Degree&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_marital_status_c15 = &apos;S&apos;
+      OR
+            as_agg_d60197f2_q1_t45.d_sales_price_tier_c20 = &apos; 50-100&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_hd_dep_count_c18 = 1
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_education_status_c14 = &apos;Advanced Degree&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_marital_status_c15 = &apos;D&apos;
+      OR
+            as_agg_d60197f2_q1_t45.d_sales_price_tier_c20 = &apos;150-200&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_hd_dep_count_c18 = 1
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_education_status_c14 = &apos;2 yr Degree&apos;
+         AND
+            as_agg_d60197f2_q1_t45.d_cd_marital_status_c15 = &apos;M&apos; )
+) AS t_61
+WHERE
+   true;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 15 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 15
+ -- ${CacheBuster}
+SELECT
+   t_33.d_customer_zip_cod_gbakc2 AS d_customer_zip_code,
+   t_33.sum_m_cs_sales_pri_gbakc3 AS sum_m_cs_sales_price_sum_ok
+FROM
+(
+   SELECT
+      t_31.d_customer_zip_cod_c30 AS d_customer_zip_cod_gbakc2,
+      SUM(t_31.m_cs_sales_price_s_c24) AS sum_m_cs_sales_pri_gbakc3,
+      t_31.key_c4_c29 AS d_customer_zip_cod_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_b9a726be_q1_t23.d_catalog_sales_price_tie_c11 AS d_catalog_sales_pr_c26,
+         as_agg_b9a726be_q1_t23.d_customer_state_c12 AS d_customer_state_c_c25,
+         as_agg_b9a726be_q1_t23.d_customer_zip_code_c13 AS d_customer_zip_cod_c30,
+         as_agg_b9a726be_q1_t23.key_c4 AS key_c4_c29,
+         as_agg_b9a726be_q1_t23.m_cs_sales_price_sum_c14 AS m_cs_sales_price_s_c24,
+         as_agg_b9a726be_q1_t23.sold_calendar_year_c9 AS sold_calendar_year_c28,
+         as_agg_b9a726be_q1_t23.sold_d_quarter_of_year_c10 AS sold_d_quarter_of__c27
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_b9a726be_q15 AS as_agg_b9a726be_q1_t23
+      WHERE
+         as_agg_b9a726be_q1_t23.sold_d_quarter_of_year_c10 = 1
+      AND
+      (
+            as_agg_b9a726be_q1_t23.d_customer_zip_code_c13 IN (&apos;80348&apos;, &apos;81792&apos;, &apos;83405&apos;, &apos;85392&apos;, &apos;85460&apos;, &apos;85669&apos;, &apos;86197&apos;, &apos;86475&apos;, &apos;88274&apos;)
+         OR
+            as_agg_b9a726be_q1_t23.d_customer_state_c12 IN (&apos;CA&apos;, &apos;GA&apos;, &apos;WA&apos;)
+         OR
+            as_agg_b9a726be_q1_t23.d_catalog_sales_price_tie_c11 = &apos;More than 500&apos; )
+      AND
+         as_agg_b9a726be_q1_t23.sold_calendar_year_c9 = 2001
+   ) AS t_31
+   WHERE
+      true
+   GROUP BY
+      1,
+      3
+) AS t_33
+WHERE
+   t_33.sum_m_cs_sales_pri_gbakc3 IS NOT NULL
+ORDER BY
+   1 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 26 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query26
+ -- ${CacheBuster}
+SELECT
+   t_122.d_product_item_id_gbakc2 AS d_product_item_id,
+   t_122.avg_m_catalog_sale_gbakc3 AS avg_m_catalog_sales_quantity_sold_avg_ok,
+   t_122.avg_m_catalog_sale_gbakc4 AS avg_m_catalog_sales_list_price_avg_ok,
+   t_122.sum_m_catalog_sale_gbakc5 AS sum_m_catalog_sales_coupon_amount_avg_ok,
+   t_122.avg_m_catalog_sale_gbakc6 AS avg_m_catalog_sales_sales_price_avg_ok
+FROM
+(
+   SELECT
+      t_72.d_product_item_id__c70 AS d_product_item_id_gbakc2,
+      CASE WHEN SUM(t_72.countattrname_m_ca_c56) = 0 THEN NULL ELSE (SUM(t_72.sumattrname_m_cata_c58) / SUM(t_72.countattrname_m_ca_c56)) END AS avg_m_catalog_sale_gbakc3,
+      CASE WHEN SUM(t_72.countattrname_m_ca_c67) = 0 THEN NULL ELSE (SUM(t_72.sumattrname_m_cata_c57) / SUM(t_72.countattrname_m_ca_c67)) END AS avg_m_catalog_sale_gbakc4,
+      CASE WHEN SUM(t_72.countattrname_m_ca_c68) = 0 THEN NULL ELSE (SUM(t_72.sumattrname_m_cata_c65) / SUM(t_72.countattrname_m_ca_c68)) END AS sum_m_catalog_sale_gbakc5,
+      CASE WHEN SUM(t_72.countattrname_m_ca_c63) = 0 THEN NULL ELSE (SUM(t_72.sumattrname_m_cata_c60) / SUM(t_72.countattrname_m_ca_c63)) END AS avg_m_catalog_sale_gbakc6,
+      t_72.key_c11_c61 AS d_product_item_id_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_d90a8426_q7_t55.countattrname_m_catalog_s_c28 AS countattrname_m_ca_c56,
+         as_agg_d90a8426_q7_t55.countattrname_m_catalog_s_c30 AS countattrname_m_ca_c63,
+         as_agg_d90a8426_q7_t55.countattrname_m_catalog_s_c26 AS countattrname_m_ca_c67,
+         as_agg_d90a8426_q7_t55.countattrname_m_catalog_s_c24 AS countattrname_m_ca_c68,
+         as_agg_d90a8426_q7_t55.d_cd_education_status_c15 AS d_cd_education_sta_c69,
+         as_agg_d90a8426_q7_t55.d_cd_gender_c16 AS d_cd_gender_c16_c62,
+         as_agg_d90a8426_q7_t55.d_cd_marital_status_c17 AS d_cd_marital_statu_c66,
+         as_agg_d90a8426_q7_t55.d_channel_email_c18 AS d_channel_email_c1_c64,
+         as_agg_d90a8426_q7_t55.d_channel_event_c19 AS d_channel_event_c1_c71,
+         as_agg_d90a8426_q7_t55.d_product_item_id_c20 AS d_product_item_id__c70,
+         as_agg_d90a8426_q7_t55.key_c11 AS key_c11_c61,
+         as_agg_d90a8426_q7_t55.sold_calendar_year_c14 AS sold_calendar_year_c59,
+         as_agg_d90a8426_q7_t55.sumattrname_m_catalog_sal_c25 AS sumattrname_m_cata_c57,
+         as_agg_d90a8426_q7_t55.sumattrname_m_catalog_sal_c27 AS sumattrname_m_cata_c58,
+         as_agg_d90a8426_q7_t55.sumattrname_m_catalog_sal_c29 AS sumattrname_m_cata_c60,
+         as_agg_d90a8426_q7_t55.sumattrname_m_catalog_sal_c23 AS sumattrname_m_cata_c65
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d90a8426_q7_q26 AS as_agg_d90a8426_q7_t55
+      WHERE
+         as_agg_d90a8426_q7_t55.d_channel_event_c19 = &apos;N&apos;
+      AND
+         as_agg_d90a8426_q7_t55.d_channel_email_c18 = &apos;N&apos;
+      AND
+         as_agg_d90a8426_q7_t55.d_cd_marital_status_c17 = &apos;M&apos;
+      AND
+         as_agg_d90a8426_q7_t55.d_cd_gender_c16 = &apos;M&apos;
+      AND
+         as_agg_d90a8426_q7_t55.d_cd_education_status_c15 = &apos;College&apos;
+      AND
+         as_agg_d90a8426_q7_t55.d_product_item_id_c20 IS NOT NULL
+      AND
+         as_agg_d90a8426_q7_t55.sold_calendar_year_c14 = 2000
+   ) AS t_72
+   WHERE
+      true
+   GROUP BY
+      1,
+      6
+) AS t_122
+ORDER BY
+   1 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 31 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query31
+ -- ${CacheBuster}
+SELECT
+   t_443.sold_calendar_quar_gbakc3 AS sold_calendar_quarter,
+   t_443.sold_d_ca_county_gbakc4 AS sold_d_ca_county,
+   t_443.sum_store_sales_in_gbakc5 AS sum_store_sales_increase_ok,
+   t_443.sum_web_sales_incr_gbakc6 AS sum_web_sales_increase_ok
+FROM
+(
+   SELECT
+      t_397.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+      t_397.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+      CASE WHEN MIN(t_397.c_168) IS NULL THEN NULL ELSE CASE WHEN COALESCE(MIN(t_397.c_170), 0) = 0 THEN (SAFE_CAST(&apos;Infinity&apos; AS FLOAT64) * SAFE_CAST(SIGN(MIN(t_397.c_172)) AS FLOAT64)) ELSE CASE WHEN MIN(t_397.c_170) = 0 THEN NULL ELSE (MIN(t_397.c_172) / MIN(t_397.c_170)) END END END AS sum_store_sales_in_gbakc5,
+      CASE WHEN MIN(t_397.c_177) IS NULL THEN NULL ELSE CASE WHEN COALESCE(MIN(t_397.c_179), 0) = 0 THEN (SAFE_CAST(&apos;Infinity&apos; AS FLOAT64) * SAFE_CAST(SIGN(MIN(t_397.c_181)) AS FLOAT64)) ELSE CASE WHEN MIN(t_397.c_179) = 0 THEN NULL ELSE (MIN(t_397.c_181) / MIN(t_397.c_179)) END END END AS sum_web_sales_incr_gbakc6,
+      t_397.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+      t_397.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+   FROM
+   (
+      SELECT
+         t_396.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+         t_396.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+         MIN(t_396.c_168) AS c_168,
+         MIN(t_396.c_170) AS c_170,
+         MIN(t_396.c_172) AS c_172,
+         MIN(t_396.c_177) AS c_177,
+         MIN(t_396.c_179) AS c_179,
+         MIN(t_396.c_181) AS c_181,
+         t_396.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+         t_396.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+      FROM
+      (
+            SELECT
+               t_336.sold_calendar_quar_c333 AS sold_calendar_quar_gbakc3,
+               as_agg_641ee29d_q3_t331.sold_d_ca_county_c8 AS sold_d_ca_county_gbakc4,
+               SUM(as_agg_641ee29d_q3_t331.m_ss_ext_sales_price_sum_c9) AS c_168,
+               SAFE_CAST(NULL AS NUMERIC) AS c_170,
+               SAFE_CAST(NULL AS NUMERIC) AS c_172,
+               SUM(as_agg_641ee29d_q3_t331.m_ws_ext_sales_price_sum_c12) AS c_177,
+               SAFE_CAST(NULL AS NUMERIC) AS c_179,
+               SAFE_CAST(NULL AS NUMERIC) AS c_181,
+               t_336.key_c3_c334 AS sold_calendar_quar_gbakc1,
+               as_agg_641ee29d_q3_t331.key_c4 AS sold_d_ca_county_gbakc2
+            FROM
+               `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_641ee29d_q31 AS as_agg_641ee29d_q3_t331
+            JOIN
+            (
+               SELECT
+                  as_agg_8f0aa6e1_sl_t332.key_c3 AS key_c3_c334,
+                  as_agg_8f0aa6e1_sl_t332.sold_calendar_quarter_c4 AS sold_calendar_quar_c333,
+                  as_agg_8f0aa6e1_sl_t332.sold_calendar_year_c5 AS sold_calendar_year_c335
+               FROM
+                  `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t332
+               WHERE
+                  as_agg_8f0aa6e1_sl_t332.sold_calendar_year_c5 = 2001
+               GROUP BY
+                  1,
+                  2,
+                  3
+            ) AS t_336
+            ON
+               as_agg_641ee29d_q3_t331.key_c5 = t_336.key_c3_c334
+            WHERE
+               true
+            GROUP BY
+               1,
+               2,
+               9,
+               10
+         UNION ALL
+            SELECT
+               t_345.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+               t_345.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+               SAFE_CAST(NULL AS NUMERIC) AS c_168,
+               SAFE_CAST(NULL AS NUMERIC) AS c_170,
+               MIN(t_345.c_172) AS c_172,
+               SAFE_CAST(NULL AS NUMERIC) AS c_177,
+               SAFE_CAST(NULL AS NUMERIC) AS c_179,
+               SAFE_CAST(NULL AS NUMERIC) AS c_181,
+               t_345.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+               t_345.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+            FROM
+            (
+               SELECT
+                  t_343.sold_calendar_quar_c340 AS sold_calendar_quar_gbakc3,
+                  as_agg_641ee29d_q3_t338.sold_d_ca_county_c8 AS sold_d_ca_county_gbakc4,
+                  SUM(as_agg_641ee29d_q3_t338.m_ss_ext_sales_price_sum_c9) AS c_172,
+                  t_343.key_c3_c341 AS sold_calendar_quar_gbakc1,
+                  as_agg_641ee29d_q3_t338.key_c4 AS sold_d_ca_county_gbakc2
+               FROM
+                  `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_641ee29d_q31 AS as_agg_641ee29d_q3_t338
+               JOIN
+               (
+                  SELECT
+                     as_agg_8f0aa6e1_sl_t339.key_c3 AS key_c3_c341,
+                     as_agg_8f0aa6e1_sl_t339.sold_calendar_quarter_c4 AS sold_calendar_quar_c340,
+                     as_agg_8f0aa6e1_sl_t339.sold_calendar_year_c5 AS sold_calendar_year_c342
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t339
+                  WHERE
+                     as_agg_8f0aa6e1_sl_t339.sold_calendar_year_c5 = 2001
+                  GROUP BY
+                     1,
+                     2,
+                     3
+               ) AS t_343
+               ON
+                  as_agg_641ee29d_q3_t338.key_c5 = t_343.key_c3_c341
+               WHERE
+                  true
+               GROUP BY
+                  1,
+                  2,
+                  4,
+                  5
+            ) AS t_345
+            GROUP BY
+               1,
+               2,
+               9,
+               10
+         UNION ALL
+            SELECT
+               t_389.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+               t_389.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+               SAFE_CAST(NULL AS NUMERIC) AS c_168,
+               SAFE_CAST(NULL AS NUMERIC) AS c_170,
+               SAFE_CAST(NULL AS NUMERIC) AS c_172,
+               SAFE_CAST(NULL AS NUMERIC) AS c_177,
+               MIN(t_389.c_179) AS c_179,
+               SAFE_CAST(NULL AS NUMERIC) AS c_181,
+               t_389.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+               t_389.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+            FROM
+            (
+               SELECT
+                  COALESCE(t_388.c_166, t_361.sold_calendar_quar_gbakc3) AS sold_calendar_quar_gbakc3,
+                  t_361.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_168,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_170,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_172,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_177,
+                  MIN(t_361.c_179) AS c_179,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_181,
+                  COALESCE(t_388.c_234, t_361.sold_calendar_quar_gbakc1) AS sold_calendar_quar_gbakc1,
+                  t_361.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2,
+                  COALESCE(t_388.c_225, t_361.c_228) AS c_228
+               FROM
+               (
+                  SELECT
+                     t_387.c_234 AS c_234,
+                     t_387.c_239 AS c_239,
+                     t_353.c_225 AS c_225,
+                     t_353.c_166 AS c_166
+                  FROM
+                  (
+                     SELECT
+                        t_348.c_234 AS c_234,
+                        t_351.c_237 AS c_239
+                     FROM
+                     (
+                        SELECT
+                           as_agg_5f8a6be2_sl_t346.key_c2 AS c_234,
+                           ROW_NUMBER() OVER (ORDER BY as_agg_5f8a6be2_sl_t346.key_c1 ASC ) AS rn_c233,
+                           as_agg_5f8a6be2_sl_t346.sold_calendar_quarter_c3 AS c_231,
+                           as_agg_5f8a6be2_sl_t346.key_c1 AS c_232
+                        FROM
+                           `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_5f8a6be2_sldclndrqrtr AS as_agg_5f8a6be2_sl_t346
+                        WHERE
+                           true
+                        GROUP BY
+                           1,
+                           3,
+                           4
+                     ) AS t_348
+                     JOIN
+                     (
+                        SELECT
+                           as_agg_5f8a6be2_sl_t349.key_c2 AS c_237,
+                           ROW_NUMBER() OVER (ORDER BY as_agg_5f8a6be2_sl_t349.key_c1 ASC ) AS rn_c236,
+                           as_agg_5f8a6be2_sl_t349.sold_calendar_quarter_c3 AS c_231,
+                           as_agg_5f8a6be2_sl_t349.key_c1 AS c_235
+                        FROM
+                           `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_5f8a6be2_sldclndrqrtr AS as_agg_5f8a6be2_sl_t349
+                        WHERE
+                           true
+                        GROUP BY
+                           1,
+                           3,
+                           4
+                     ) AS t_351
+                     ON
+                        (t_348.rn_c233 + SAFE_CAST(-1 AS INT64)) = t_351.rn_c236
+                     GROUP BY
+                        1,
+                        2
+                  ) AS t_387
+                  JOIN
+                  (
+                     SELECT
+                        as_agg_8f0aa6e1_sl_t352.key_c3 AS c_240,
+                        as_agg_8f0aa6e1_sl_t352.sold_calendar_year_c5 AS c_225,
+                        as_agg_8f0aa6e1_sl_t352.sold_calendar_quarter_c4 AS c_166,
+                        as_agg_8f0aa6e1_sl_t352.key_c3 AS c_186
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t352
+                     WHERE
+                        true
+                     GROUP BY
+                        1,
+                        2,
+                        3,
+                        4
+                  ) AS t_353
+                  ON
+                     t_387.c_234 = t_353.c_186
+                  GROUP BY
+                     1,
+                     2,
+                     3,
+                     4
+               ) AS t_388
+               JOIN
+               (
+                  SELECT
+                     t_359.sold_calendar_quar_c356 AS sold_calendar_quar_gbakc3,
+                     as_agg_641ee29d_q3_t354.sold_d_ca_county_c8 AS sold_d_ca_county_gbakc4,
+                     SUM(as_agg_641ee29d_q3_t354.m_ws_ext_sales_price_sum_c12) AS c_179,
+                     t_359.key_c3_c357 AS sold_calendar_quar_gbakc1,
+                     as_agg_641ee29d_q3_t354.key_c4 AS sold_d_ca_county_gbakc2,
+                     t_359.key_c3_c357 AS c_229,
+                     t_359.sold_calendar_year_c358 AS c_228
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_641ee29d_q31 AS as_agg_641ee29d_q3_t354
+                  JOIN
+                  (
+                     SELECT
+                        as_agg_8f0aa6e1_sl_t355.key_c3 AS key_c3_c357,
+                        as_agg_8f0aa6e1_sl_t355.sold_calendar_quarter_c4 AS sold_calendar_quar_c356,
+                        as_agg_8f0aa6e1_sl_t355.sold_calendar_year_c5 AS sold_calendar_year_c358
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t355
+                     WHERE
+                        true
+                     GROUP BY
+                        1,
+                        2,
+                        3
+                  ) AS t_359
+                  ON
+                     as_agg_641ee29d_q3_t354.key_c5 = t_359.key_c3_c357
+                  WHERE
+                     true
+                  GROUP BY
+                     1,
+                     2,
+                     4,
+                     5,
+                     6,
+                     7
+               ) AS t_361
+               ON
+                  t_388.c_239 = t_361.sold_calendar_quar_gbakc1
+               WHERE
+                  COALESCE(t_388.c_225, t_361.c_228) = 2001
+               GROUP BY
+                  1,
+                  2,
+                  9,
+                  10,
+                  11
+            ) AS t_389
+            GROUP BY
+               1,
+               2,
+               9,
+               10
+         UNION ALL
+            SELECT
+               t_393.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+               t_393.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+               SAFE_CAST(NULL AS NUMERIC) AS c_168,
+               MIN(t_393.c_170) AS c_170,
+               SAFE_CAST(NULL AS NUMERIC) AS c_172,
+               SAFE_CAST(NULL AS NUMERIC) AS c_177,
+               SAFE_CAST(NULL AS NUMERIC) AS c_179,
+               SAFE_CAST(NULL AS NUMERIC) AS c_181,
+               t_393.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+               t_393.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+            FROM
+            (
+               SELECT
+                  COALESCE(t_392.c_166, t_377.sold_calendar_quar_gbakc3) AS sold_calendar_quar_gbakc3,
+                  t_377.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_168,
+                  MIN(t_377.c_170) AS c_170,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_172,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_177,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_179,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_181,
+                  COALESCE(t_392.c_280, t_377.sold_calendar_quar_gbakc1) AS sold_calendar_quar_gbakc1,
+                  t_377.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2,
+                  COALESCE(t_392.c_271, t_377.c_274) AS c_274
+               FROM
+               (
+                  SELECT
+                     t_391.c_280 AS c_280,
+                     t_391.c_285 AS c_285,
+                     t_369.c_271 AS c_271,
+                     t_369.c_166 AS c_166
+                  FROM
+                  (
+                     SELECT
+                        t_364.c_280 AS c_280,
+                        t_367.c_283 AS c_285
+                     FROM
+                     (
+                        SELECT
+                           as_agg_5f8a6be2_sl_t362.key_c2 AS c_280,
+                           ROW_NUMBER() OVER (ORDER BY as_agg_5f8a6be2_sl_t362.key_c1 ASC ) AS rn_c279,
+                           as_agg_5f8a6be2_sl_t362.sold_calendar_quarter_c3 AS c_277,
+                           as_agg_5f8a6be2_sl_t362.key_c1 AS c_278
+                        FROM
+                           `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_5f8a6be2_sldclndrqrtr AS as_agg_5f8a6be2_sl_t362
+                        WHERE
+                           true
+                        GROUP BY
+                           1,
+                           3,
+                           4
+                     ) AS t_364
+                     JOIN
+                     (
+                        SELECT
+                           as_agg_5f8a6be2_sl_t365.key_c2 AS c_283,
+                           ROW_NUMBER() OVER (ORDER BY as_agg_5f8a6be2_sl_t365.key_c1 ASC ) AS rn_c282,
+                           as_agg_5f8a6be2_sl_t365.sold_calendar_quarter_c3 AS c_277,
+                           as_agg_5f8a6be2_sl_t365.key_c1 AS c_281
+                        FROM
+                           `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_5f8a6be2_sldclndrqrtr AS as_agg_5f8a6be2_sl_t365
+                        WHERE
+                           true
+                        GROUP BY
+                           1,
+                           3,
+                           4
+                     ) AS t_367
+                     ON
+                        (t_364.rn_c279 + SAFE_CAST(-1 AS INT64)) = t_367.rn_c282
+                     GROUP BY
+                        1,
+                        2
+                  ) AS t_391
+                  JOIN
+                  (
+                     SELECT
+                        as_agg_8f0aa6e1_sl_t368.key_c3 AS c_286,
+                        as_agg_8f0aa6e1_sl_t368.sold_calendar_year_c5 AS c_271,
+                        as_agg_8f0aa6e1_sl_t368.sold_calendar_quarter_c4 AS c_166,
+                        as_agg_8f0aa6e1_sl_t368.key_c3 AS c_186
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t368
+                     WHERE
+                        true
+                     GROUP BY
+                        1,
+                        2,
+                        3,
+                        4
+                  ) AS t_369
+                  ON
+                     t_391.c_280 = t_369.c_186
+                  GROUP BY
+                     1,
+                     2,
+                     3,
+                     4
+               ) AS t_392
+               JOIN
+               (
+                  SELECT
+                     t_375.sold_calendar_quar_c372 AS sold_calendar_quar_gbakc3,
+                     as_agg_641ee29d_q3_t370.sold_d_ca_county_c8 AS sold_d_ca_county_gbakc4,
+                     SUM(as_agg_641ee29d_q3_t370.m_ss_ext_sales_price_sum_c9) AS c_170,
+                     t_375.key_c3_c373 AS sold_calendar_quar_gbakc1,
+                     as_agg_641ee29d_q3_t370.key_c4 AS sold_d_ca_county_gbakc2,
+                     t_375.key_c3_c373 AS c_275,
+                     t_375.sold_calendar_year_c374 AS c_274
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_641ee29d_q31 AS as_agg_641ee29d_q3_t370
+                  JOIN
+                  (
+                     SELECT
+                        as_agg_8f0aa6e1_sl_t371.key_c3 AS key_c3_c373,
+                        as_agg_8f0aa6e1_sl_t371.sold_calendar_quarter_c4 AS sold_calendar_quar_c372,
+                        as_agg_8f0aa6e1_sl_t371.sold_calendar_year_c5 AS sold_calendar_year_c374
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t371
+                     WHERE
+                        true
+                     GROUP BY
+                        1,
+                        2,
+                        3
+                  ) AS t_375
+                  ON
+                     as_agg_641ee29d_q3_t370.key_c5 = t_375.key_c3_c373
+                  WHERE
+                     true
+                  GROUP BY
+                     1,
+                     2,
+                     4,
+                     5,
+                     6,
+                     7
+               ) AS t_377
+               ON
+                  t_392.c_285 = t_377.sold_calendar_quar_gbakc1
+               WHERE
+                  COALESCE(t_392.c_271, t_377.c_274) = 2001
+               GROUP BY
+                  1,
+                  2,
+                  9,
+                  10,
+                  11
+            ) AS t_393
+            GROUP BY
+               1,
+               2,
+               9,
+               10
+         UNION ALL
+            SELECT
+               t_385.sold_calendar_quar_gbakc3 AS sold_calendar_quar_gbakc3,
+               t_385.sold_d_ca_county_gbakc4 AS sold_d_ca_county_gbakc4,
+               SAFE_CAST(NULL AS NUMERIC) AS c_168,
+               SAFE_CAST(NULL AS NUMERIC) AS c_170,
+               SAFE_CAST(NULL AS NUMERIC) AS c_172,
+               SAFE_CAST(NULL AS NUMERIC) AS c_177,
+               SAFE_CAST(NULL AS NUMERIC) AS c_179,
+               MIN(t_385.c_181) AS c_181,
+               t_385.sold_calendar_quar_gbakc1 AS sold_calendar_quar_gbakc1,
+               t_385.sold_d_ca_county_gbakc2 AS sold_d_ca_county_gbakc2
+            FROM
+            (
+               SELECT
+                  t_383.sold_calendar_quar_c380 AS sold_calendar_quar_gbakc3,
+                  as_agg_641ee29d_q3_t378.sold_d_ca_county_c8 AS sold_d_ca_county_gbakc4,
+                  SUM(as_agg_641ee29d_q3_t378.m_ws_ext_sales_price_sum_c12) AS c_181,
+                  t_383.key_c3_c381 AS sold_calendar_quar_gbakc1,
+                  as_agg_641ee29d_q3_t378.key_c4 AS sold_d_ca_county_gbakc2
+               FROM
+                  `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_641ee29d_q31 AS as_agg_641ee29d_q3_t378
+               JOIN
+               (
+                  SELECT
+                     as_agg_8f0aa6e1_sl_t379.key_c3 AS key_c3_c381,
+                     as_agg_8f0aa6e1_sl_t379.sold_calendar_quarter_c4 AS sold_calendar_quar_c380,
+                     as_agg_8f0aa6e1_sl_t379.sold_calendar_year_c5 AS sold_calendar_year_c382
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_8f0aa6e1_sldclndrqrtr_s AS as_agg_8f0aa6e1_sl_t379
+                  WHERE
+                     as_agg_8f0aa6e1_sl_t379.sold_calendar_year_c5 = 2001
+                  GROUP BY
+                     1,
+                     2,
+                     3
+               ) AS t_383
+               ON
+                  as_agg_641ee29d_q3_t378.key_c5 = t_383.key_c3_c381
+               WHERE
+                  true
+               GROUP BY
+                  1,
+                  2,
+                  4,
+                  5
+            ) AS t_385
+            GROUP BY
+               1,
+               2,
+               9,
+               10
+      ) AS t_396
+      GROUP BY
+         1,
+         2,
+         9,
+         10
+   ) AS t_397
+   GROUP BY
+      1,
+      2,
+      5,
+      6
+) AS t_443;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 33 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query33
+ -- ${CacheBuster}
+SELECT
+   t_67.d_product_manufact_gbakc2 AS d_product_manufacturer_id,
+   t_67.sum_total_ext_sale_gbakc3 AS sum_total__ext_sales_price_ok
+FROM
+(
+   SELECT
+      t_51.d_product_manufact_c42 AS d_product_manufact_gbakc2,
+      CASE WHEN COALESCE(SUM(t_51.m_ss_ext_sales_pri_c45), SUM(t_51.m_ws_ext_sales_pri_c50), SUM(t_51.m_cs_ext_sales_pri_c47)) IS NULL THEN NULL ELSE ((COALESCE(SUM(t_51.m_ss_ext_sales_pri_c45), 0) + COALESCE(SUM(t_51.m_ws_ext_sales_pri_c50), 0)) + COALESCE(SUM(t_51.m_cs_ext_sales_pri_c47), 0)) END AS sum_total_ext_sale_gbakc3,
+      t_51.key_c3_c46 AS d_product_manufact_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_2635a25b_q3_t41.d_product_manufacturer_id_c13 AS d_product_manufact_c42,
+         as_agg_2635a25b_q3_t41.i_category_c9 AS i_category_c9_c44,
+         as_agg_2635a25b_q3_t41.key_c3 AS key_c3_c46,
+         as_agg_2635a25b_q3_t41.m_cs_ext_sales_price_sum_c14 AS m_cs_ext_sales_pri_c47,
+         as_agg_2635a25b_q3_t41.m_ss_ext_sales_price_sum_c17 AS m_ss_ext_sales_pri_c45,
+         as_agg_2635a25b_q3_t41.m_ws_ext_sales_price_sum_c20 AS m_ws_ext_sales_pri_c50,
+         as_agg_2635a25b_q3_t41.sold_calendar_year_week_c10 AS sold_calendar_year_c43,
+         as_agg_2635a25b_q3_t41.sold_d_customer_gmt_offse_c11 AS sold_d_customer_gm_c49,
+         as_agg_2635a25b_q3_t41.sold_d_month_of_year_c12 AS sold_d_month_of_ye_c48
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_2635a25b_q33 AS as_agg_2635a25b_q3_t41
+      WHERE
+         as_agg_2635a25b_q3_t41.sold_d_month_of_year_c12 = 7
+      AND
+         as_agg_2635a25b_q3_t41.sold_d_customer_gmt_offse_c11 = -5.00
+      AND
+         as_agg_2635a25b_q3_t41.i_category_c9 = &apos;Electronics&apos;
+      AND
+         as_agg_2635a25b_q3_t41.sold_calendar_year_week_c10 = 1999
+   ) AS t_51
+   WHERE
+      true
+   GROUP BY
+      1,
+      3
+) AS t_67
+ORDER BY
+   2 DESC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 42 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 42
+ -- ${CacheBuster}
+SELECT
+   t_40.sold_calendar_year_gbakc3 AS sold_calendar_year_week,
+   t_40.i_category_gbakc4 AS i_category,
+   t_40.sum_m_ss_ext_sales_gbakc5 AS sum_m_ss_ext_sales_price_sum_ok
+FROM
+(
+   SELECT
+      t_38.d_year_c35 AS sold_calendar_year_gbakc3,
+      t_33.i_category_c5_c31 AS i_category_gbakc4,
+      SUM(t_33.m_ss_ext_sales_pri_c32) AS sum_m_ss_ext_sales_gbakc5,
+      t_38.d_year_c35 AS sold_calendar_year_gbakc1,
+      t_33.key_c3_c29 AS i_category_gbakc2
+   FROM
+   (
+      SELECT
+         as_agg_b315e0ce_ic_t27.d_product_manager_id_c6 AS d_product_manager__c28,
+         as_agg_b315e0ce_ic_t27.i_category_c5 AS i_category_c5_c31,
+         as_agg_b315e0ce_ic_t27.key_c2 AS key_c2_c30,
+         as_agg_b315e0ce_ic_t27.key_c3 AS key_c3_c29,
+         as_agg_b315e0ce_ic_t27.m_ss_ext_sales_price_sum_c27 AS m_ss_ext_sales_pri_c32
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_b315e0ce_ictgr_dprdctmn AS as_agg_b315e0ce_ic_t27
+      WHERE
+         as_agg_b315e0ce_ic_t27.d_product_manager_id_c6 = 1
+   ) AS t_33
+   JOIN
+   (
+      SELECT
+         date_dim_t34.d_date_sk AS d_date_sk_c36,
+         date_dim_t34.d_moy AS d_moy_c37,
+         date_dim_t34.d_year AS d_year_c35
+      FROM
+         `benchmark-251817`.TPCDS_10TB.date_dim AS date_dim_t34
+      WHERE
+         date_dim_t34.d_year = 1998
+      AND
+         date_dim_t34.d_moy = 12
+      GROUP BY
+         1,
+         2,
+         3
+   ) AS t_38
+   ON
+      t_33.key_c2_c30 = t_38.d_date_sk_c36
+   WHERE
+      true
+   GROUP BY
+      1,
+      2,
+      4,
+      5
+) AS t_40
+ORDER BY
+   3 DESC;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 48 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 48
+ -- ${CacheBuster}
+SELECT
+   SUM(t_28.m_ss_quantity_sum__c24) AS sum_m_ss_quantity_sum_ok
+FROM
+(
+   SELECT
+      as_agg_01c41740_q4_t19.d_cd_education_status_c14 AS d_cd_education_sta_c23,
+      as_agg_01c41740_q4_t19.d_cd_marital_status_c15 AS d_cd_marital_statu_c25,
+      as_agg_01c41740_q4_t19.d_net_profit_tier_c16 AS d_net_profit_tier__c20,
+      as_agg_01c41740_q4_t19.d_sales_price_tier_c17 AS d_sales_price_tier_c26,
+      as_agg_01c41740_q4_t19.m_ss_quantity_sum_c18 AS m_ss_quantity_sum__c24,
+      as_agg_01c41740_q4_t19.sold_calendar_year_week_c11 AS sold_calendar_year_c21,
+      as_agg_01c41740_q4_t19.sold_d_customer_country_c12 AS sold_d_customer_co_c22,
+      as_agg_01c41740_q4_t19.sold_d_customer_state_c13 AS sold_d_customer_st_c27
+   FROM
+      `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_01c41740_q48 AS as_agg_01c41740_q4_t19
+   WHERE
+   (
+            as_agg_01c41740_q4_t19.d_net_profit_tier_c16 IN (&apos;  0- 50&apos;, &apos; 50-100&apos;, &apos;100-150&apos;, &apos;150-200&apos;, &apos;200-250&apos;, &apos;250-300&apos;, &apos;300-2000&apos;)
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_country_c12 = &apos;United States&apos;
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_state_c13 IN (&apos;IL&apos;, &apos;AR&apos;, &apos;UT&apos;)
+      OR
+            as_agg_01c41740_q4_t19.d_net_profit_tier_c16 IN (&apos;150-200&apos;, &apos;200-250&apos;, &apos;250-300&apos;, &apos;300-2000&apos;, &apos;2000-3000&apos;)
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_country_c12 = &apos;United States&apos;
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_state_c13 IN (&apos;WV&apos;, &apos;GA&apos;, &apos;NC&apos;)
+      OR
+            as_agg_01c41740_q4_t19.d_net_profit_tier_c16 IN (&apos; 50-100&apos;, &apos;100-150&apos;, &apos;150-200&apos;, &apos;200-250&apos;, &apos;250-300&apos;, &apos;300-2000&apos;, &apos;2000-3000&apos;, &apos;3000-25000&apos;)
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_country_c12 = &apos;United States&apos;
+         AND
+            as_agg_01c41740_q4_t19.sold_d_customer_state_c13 IN (&apos;PA&apos;, &apos;LA&apos;, &apos;MO&apos;) )
+   AND
+      as_agg_01c41740_q4_t19.sold_calendar_year_week_c11 = 1999
+   AND
+   (
+            as_agg_01c41740_q4_t19.d_sales_price_tier_c17 = &apos;100-150&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_marital_status_c15 = &apos;S&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_education_status_c14 = &apos;Primary&apos;
+      OR
+            as_agg_01c41740_q4_t19.d_sales_price_tier_c17 = &apos; 50-100&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_marital_status_c15 = &apos;U&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_education_status_c14 = &apos;Advanced Degree&apos;
+      OR
+            as_agg_01c41740_q4_t19.d_sales_price_tier_c17 = &apos;150-200&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_marital_status_c15 = &apos;W&apos;
+         AND
+            as_agg_01c41740_q4_t19.d_cd_education_status_c14 = &apos;4 yr Degree&apos; )
+) AS t_28
+WHERE
+   true;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 50 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 50
+ -- ${CacheBuster}
+SELECT
+   t_145.d_store_name_gbakc16 AS d_store_name,
+   t_145.d_store_company_id_gbakc17 AS d_store_company_id,
+   t_145.d_store_street_num_gbakc18 AS d_store_street_number,
+   t_145.d_store_street_nam_gbakc19 AS d_store_street_name,
+   t_145.d_store_street_typ_gbakc20 AS d_store_street_type,
+   t_145.d_store_suite_numb_gbakc21 AS d_store_suite_number,
+   t_145.d_store_city_gbakc22 AS d_store_city,
+   t_145.d_store_county_gbakc23 AS d_store_county,
+   t_145.d_store_state_gbakc24 AS d_store_state,
+   t_145.d_store_zip_code_gbakc25 AS d_store_zip_code,
+   t_145.d_returns_time_tie_gbakc26 AS d_returns_time_tier,
+   t_145.sum_m_returns_coun_gbakc27 AS sum_m_returns_count_sum_ok
+FROM
+(
+   SELECT
+      t_143.d_store_name_c34_c125 AS d_store_name_gbakc16,
+      t_143.d_store_company_id_c117 AS d_store_company_id_gbakc17,
+      t_143.d_store_street_num_c124 AS d_store_street_num_gbakc18,
+      t_143.d_store_street_nam_c130 AS d_store_street_nam_gbakc19,
+      t_143.d_store_street_typ_c128 AS d_store_street_typ_gbakc20,
+      t_143.d_store_suite_numb_c137 AS d_store_suite_numb_gbakc21,
+      t_143.d_store_city_c30_c114 AS d_store_city_gbakc22,
+      t_143.d_store_county_c33_c115 AS d_store_county_gbakc23,
+      t_143.d_store_state_c35_c127 AS d_store_state_gbakc24,
+      t_143.d_store_zip_code_c_c131 AS d_store_zip_code_gbakc25,
+      t_143.d_returns_time_tie_c141 AS d_returns_time_tie_gbakc26,
+      SUM(t_143.m_returns_count_su_c142) AS sum_m_returns_coun_gbakc27,
+      t_143.key_c11_c136 AS d_store_name_gbakc1,
+      t_143.key_c7_c129 AS d_store_company_id_gbakc2,
+      t_143.key_c25_c122 AS d_store_street_num_gbakc3,
+      t_143.key_c9_c119 AS d_store_street_nam_gbakc4,
+      t_143.key_c13_c116 AS d_store_street_typ_gbakc5,
+      t_143.key_c19_c126 AS d_store_suite_numb_gbakc6,
+      t_143.key_c3_c132 AS d_store_city_gbakc7,
+      t_143.key_c4_c133 AS d_store_city_gbakc8,
+      t_143.key_c5_c134 AS d_store_city_gbakc9,
+      t_143.key_c21_c120 AS d_store_county_gbakc10,
+      t_143.key_c22_c121 AS d_store_county_gbakc11,
+      t_143.key_c1_c138 AS d_store_state_gbakc12,
+      t_143.key_c2_c139 AS d_store_state_gbakc13,
+      t_143.key_c14_c123 AS d_store_zip_code_gbakc14,
+      t_143.key_c24_c140 AS d_returns_time_tie_gbakc15
+   FROM
+   (
+      SELECT
+         as_agg_80e379ee_q5_t113.d_returns_time_tier_c29 AS d_returns_time_tie_c141,
+         as_agg_80e379ee_q5_t113.d_store_city_c30 AS d_store_city_c30_c114,
+         as_agg_80e379ee_q5_t113.d_store_company_id_c31 AS d_store_company_id_c117,
+         as_agg_80e379ee_q5_t113.d_store_county_c33 AS d_store_county_c33_c115,
+         as_agg_80e379ee_q5_t113.d_store_name_c34 AS d_store_name_c34_c125,
+         as_agg_80e379ee_q5_t113.d_store_state_c35 AS d_store_state_c35_c127,
+         as_agg_80e379ee_q5_t113.d_store_street_name_c36 AS d_store_street_nam_c130,
+         as_agg_80e379ee_q5_t113.d_store_street_number_c37 AS d_store_street_num_c124,
+         as_agg_80e379ee_q5_t113.d_store_street_type_c38 AS d_store_street_typ_c128,
+         as_agg_80e379ee_q5_t113.d_store_suite_number_c39 AS d_store_suite_numb_c137,
+         as_agg_80e379ee_q5_t113.d_store_zip_code_c40 AS d_store_zip_code_c_c131,
+         as_agg_80e379ee_q5_t113.key_c11 AS key_c11_c136,
+         as_agg_80e379ee_q5_t113.key_c13 AS key_c13_c116,
+         as_agg_80e379ee_q5_t113.key_c14 AS key_c14_c123,
+         as_agg_80e379ee_q5_t113.key_c19 AS key_c19_c126,
+         as_agg_80e379ee_q5_t113.key_c1 AS key_c1_c138,
+         as_agg_80e379ee_q5_t113.key_c21 AS key_c21_c120,
+         as_agg_80e379ee_q5_t113.key_c22 AS key_c22_c121,
+         as_agg_80e379ee_q5_t113.key_c24 AS key_c24_c140,
+         as_agg_80e379ee_q5_t113.key_c25 AS key_c25_c122,
+         as_agg_80e379ee_q5_t113.key_c2 AS key_c2_c139,
+         as_agg_80e379ee_q5_t113.key_c3 AS key_c3_c132,
+         as_agg_80e379ee_q5_t113.key_c4 AS key_c4_c133,
+         as_agg_80e379ee_q5_t113.key_c5 AS key_c5_c134,
+         as_agg_80e379ee_q5_t113.key_c7 AS key_c7_c129,
+         as_agg_80e379ee_q5_t113.key_c9 AS key_c9_c119,
+         as_agg_80e379ee_q5_t113.m_returns_count_sum_c41 AS m_returns_count_su_c142,
+         as_agg_80e379ee_q5_t113.return_calendar_year_week_c27 AS return_calendar_ye_c135,
+         as_agg_80e379ee_q5_t113.return_d_month_of_year_c28 AS return_d_month_of__c118
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_80e379ee_q50 AS as_agg_80e379ee_q5_t113
+      WHERE
+         as_agg_80e379ee_q5_t113.return_calendar_year_week_c27 = 1998
+      AND
+         as_agg_80e379ee_q5_t113.return_d_month_of_year_c28 = 9
+   ) AS t_143
+   WHERE
+      true
+   GROUP BY
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+) AS t_145
+ORDER BY
+   1 ASC,
+   2 ASC,
+   3 ASC,
+   4 ASC,
+   5 ASC,
+   6 ASC,
+   7 ASC,
+   8 ASC,
+   9 ASC,
+   10 ASC,
+   11 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 52 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 52
+ -- ${CacheBuster}
+SELECT
+   t_47.sold_calendar_year_gbakc4 AS sold_calendar_year_week,
+   t_47.d_product_brand_id_gbakc5 AS d_product_brand_id,
+   t_47.d_product_brand_na_gbakc6 AS d_product_brand_name,
+   t_47.sum_m_ss_ext_sales_gbakc7 AS sum_m_ss_ext_sales_price_sum_ok
+FROM
+(
+   SELECT
+      t_45.sold_calendar_year_c40 AS sold_calendar_year_gbakc4,
+      t_45.d_product_brand_id_c38 AS d_product_brand_id_gbakc5,
+      t_45.d_product_brand_na_c36 AS d_product_brand_na_gbakc6,
+      SUM(t_45.m_ss_ext_sales_pri_c44) AS sum_m_ss_ext_sales_gbakc7,
+      t_45.key_c5_c41 AS sold_calendar_year_gbakc1,
+      t_45.key_c9_c43 AS d_product_brand_id_gbakc2,
+      t_45.key_c4_c42 AS d_product_brand_na_gbakc3
+   FROM
+   (
+      SELECT
+         as_agg_76edb6f5_q5_t35.d_product_brand_id_c12 AS d_product_brand_id_c38,
+         as_agg_76edb6f5_q5_t35.d_product_brand_name_c13 AS d_product_brand_na_c36,
+         as_agg_76edb6f5_q5_t35.d_product_manager_id_c14 AS d_product_manager__c39,
+         as_agg_76edb6f5_q5_t35.key_c4 AS key_c4_c42,
+         as_agg_76edb6f5_q5_t35.key_c5 AS key_c5_c41,
+         as_agg_76edb6f5_q5_t35.key_c9 AS key_c9_c43,
+         as_agg_76edb6f5_q5_t35.m_ss_ext_sales_price_sum_c15 AS m_ss_ext_sales_pri_c44,
+         as_agg_76edb6f5_q5_t35.sold_calendar_year_week_c10 AS sold_calendar_year_c40,
+         as_agg_76edb6f5_q5_t35.sold_d_month_of_year_c11 AS sold_d_month_of_ye_c37
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_76edb6f5_q52 AS as_agg_76edb6f5_q5_t35
+      WHERE
+         as_agg_76edb6f5_q5_t35.d_product_manager_id_c14 = 1
+      AND
+         as_agg_76edb6f5_q5_t35.sold_calendar_year_week_c10 = 2002
+      AND
+         as_agg_76edb6f5_q5_t35.sold_d_month_of_year_c11 = 12
+   ) AS t_45
+   WHERE
+      true
+   GROUP BY
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+) AS t_47
+ORDER BY
+   1 ASC,
+   4 DESC,
+   2 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 53 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 53
+ -- ${CacheBuster}
+SELECT
+   t_511.d_product_manufact_gbakc3 AS d_product_manufacturer_id,
+   t_511.sold_calendar_quar_gbakc4 AS sold_calendar_quarter,
+   t_511.sum_m_store_sales__gbakc5 AS sum_m_store_sales_price_ok,
+   t_511.sum_avg_quarterly__gbakc6 AS sum_avg_quarterly_store_sales_for_1998_1999_ok,
+   t_511.sum_avg_quarter_sa_gbakc7 AS sum_avg_quarter_sales_ratio_ok
+FROM
+(
+   SELECT
+      t_379.d_product_manufact_gbakc3 AS d_product_manufact_gbakc3,
+      t_379.sold_calendar_quar_gbakc4 AS sold_calendar_quar_gbakc4,
+      MIN(t_379.sum_m_store_sales__gbakc5) AS sum_m_store_sales__gbakc5,
+      MIN(t_379.c_166) AS sum_avg_quarterly__gbakc6,
+      CASE WHEN COALESCE(MIN(t_379.c_166), 0) = 0 THEN (SAFE_CAST(&apos;Infinity&apos; AS FLOAT64) * SAFE_CAST(SIGN(CASE WHEN CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END &lt; 0 THEN (-1 * CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END) ELSE CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END END) AS FLOAT64)) ELSE CASE WHEN MIN(t_379.c_166) = 0 THEN NULL ELSE (CASE WHEN CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END &lt; 0 THEN (-1 * CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END) ELSE CASE WHEN MIN(t_379.c_169) IS NULL THEN (-1 * MIN(t_379.c_166)) WHEN MIN(t_379.c_166) IS NULL THEN MIN(t_379.c_169) ELSE (MIN(t_379.c_169) - MIN(t_379.c_166)) END END / MIN(t_379.c_166)) END END AS sum_avg_quarter_sa_gbakc7,
+      t_379.d_product_manufact_gbakc1 AS d_product_manufact_gbakc1,
+      t_379.sold_calendar_quar_gbakc2 AS sold_calendar_quar_gbakc2
+   FROM
+   (
+      SELECT
+         t_378.d_product_manufact_gbakc3 AS d_product_manufact_gbakc3,
+         t_378.sold_calendar_quar_gbakc4 AS sold_calendar_quar_gbakc4,
+         MIN(t_378.sum_m_store_sales__gbakc5) AS sum_m_store_sales__gbakc5,
+         MIN(t_378.c_166) AS c_166,
+         MIN(t_378.c_169) AS c_169,
+         t_378.d_product_manufact_gbakc1 AS d_product_manufact_gbakc1,
+         t_378.sold_calendar_quar_gbakc2 AS sold_calendar_quar_gbakc2
+      FROM
+      (
+            SELECT
+               t_332.d_product_manufact_c325 AS d_product_manufact_gbakc3,
+               t_332.sold_calendar_quar_c330 AS sold_calendar_quar_gbakc4,
+               SUM(t_332.m_store_sales_pric_c327) AS sum_m_store_sales__gbakc5,
+               SAFE_CAST(NULL AS NUMERIC) AS c_166,
+               SUM(t_332.m_store_sales_pric_c327) AS c_169,
+               t_332.key_c3_c324 AS d_product_manufact_gbakc1,
+               t_332.key_c8_c329 AS sold_calendar_quar_gbakc2
+            FROM
+            (
+               SELECT
+                  as_agg_2f6af26d_q5_t323.d_product_brand_name_c12 AS d_product_brand_na_c326,
+                  as_agg_2f6af26d_q5_t323.d_product_class_name_c13 AS d_product_class_na_c328,
+                  as_agg_2f6af26d_q5_t323.d_product_manufacturer_id_c14 AS d_product_manufact_c325,
+                  as_agg_2f6af26d_q5_t323.i_category_c10 AS i_category_c10_c331,
+                  as_agg_2f6af26d_q5_t323.key_c3 AS key_c3_c324,
+                  as_agg_2f6af26d_q5_t323.key_c8 AS key_c8_c329,
+                  as_agg_2f6af26d_q5_t323.m_store_sales_price_c15 AS m_store_sales_pric_c327,
+                  as_agg_2f6af26d_q5_t323.sold_calendar_quarter_c11 AS sold_calendar_quar_c330
+               FROM
+                  `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_2f6af26d_q53 AS as_agg_2f6af26d_q5_t323
+               WHERE
+                  as_agg_2f6af26d_q5_t323.sold_calendar_quarter_c11 IN (&apos;1998Q2&apos;, &apos;1998Q3&apos;, &apos;1998Q4&apos;, &apos;1999Q1&apos;, &apos;1999Q2&apos;)
+               AND
+               (
+                        as_agg_2f6af26d_q5_t323.d_product_class_name_c13 IN (&apos;personal&apos;, &apos;portable&apos;, &apos;reference&apos;, &apos;self-help&apos;)
+                     AND
+                        as_agg_2f6af26d_q5_t323.i_category_c10 IN (&apos;Books&apos;, &apos;Children&apos;, &apos;Electronics&apos;)
+                     AND
+                        as_agg_2f6af26d_q5_t323.d_product_brand_name_c12 IN (&apos;exportiunivamalg #9&apos;, &apos;scholaramalgamalg #14&apos;, &apos;scholaramalgamalg #7&apos;, &apos;scholaramalgamalg #9&apos;)
+                  OR
+                        as_agg_2f6af26d_q5_t323.d_product_class_name_c13 IN (&apos;accessories&apos;, &apos;classical&apos;, &apos;fragrances&apos;, &apos;pants&apos;)
+                     AND
+                        as_agg_2f6af26d_q5_t323.i_category_c10 IN (&apos;Women&apos;, &apos;Music&apos;, &apos;Men&apos;)
+                     AND
+                        as_agg_2f6af26d_q5_t323.d_product_brand_name_c12 IN (&apos;amalgimporto #1&apos;, &apos;edu packscholar #1&apos;, &apos;exportiimporto #1&apos;, &apos;importoamalg #1&apos;) )
+            ) AS t_332
+            WHERE
+               true
+            GROUP BY
+               1,
+               2,
+               6,
+               7
+         UNION ALL
+            SELECT
+               t_371.d_product_manufact_gbakc3 AS d_product_manufact_gbakc3,
+               t_371.sold_calendar_quar_gbakc4 AS sold_calendar_quar_gbakc4,
+               SAFE_CAST(NULL AS NUMERIC) AS sum_m_store_sales__gbakc5,
+               AVG(t_376.c_166) AS c_166,
+               SAFE_CAST(NULL AS NUMERIC) AS c_169,
+               t_371.d_product_manufact_gbakc1 AS d_product_manufact_gbakc1,
+               t_371.sold_calendar_quar_gbakc2 AS sold_calendar_quar_gbakc2
+            FROM
+            (
+               SELECT
+                  t_359.d_product_manufact_gbakc3 AS d_product_manufact_gbakc3,
+                  t_359.sold_calendar_quar_gbakc4 AS sold_calendar_quar_gbakc4,
+                  SAFE_CAST(NULL AS NUMERIC) AS sum_m_store_sales__gbakc5,
+                  AVG(t_359.c_166) AS c_166,
+                  SAFE_CAST(NULL AS NUMERIC) AS c_169,
+                  t_359.d_product_manufact_gbakc1 AS d_product_manufact_gbakc1,
+                  COALESCE(t_375.c_312, t_359.sold_calendar_quar_gbakc2) AS sold_calendar_quar_gbakc2
+               FROM
+               (
+                  SELECT
+                     t_335.c_304 AS c_313,
+                     t_374.c_309 AS c_312
+                  FROM
+                  (
+                     SELECT
+                        as_agg_126cbbd1_no_t334.key_c1 AS c_304
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_126cbbd1_none AS as_agg_126cbbd1_no_t334
+                     WHERE
+                        true
+                     GROUP BY
+                        1
+                  ) AS t_335
+                  JOIN
+                  (
+                     SELECT
+                        MIN(t_372.c_304) AS c_309,
+                        t_372.c_305 AS c_310,
+                        t_373.c_307 AS c_311
+                     FROM
+                     (
+                        SELECT
+                           t_337.c_304 AS c_304,
+                           t_341.c_305 AS c_305
+                        FROM
+                        (
+                           SELECT
+                              as_agg_126cbbd1_no_t336.key_c1 AS c_304
+                           FROM
+                              `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_126cbbd1_none AS as_agg_126cbbd1_no_t336
+                           WHERE
+                              true
+                           GROUP BY
+                              1
+                        ) AS t_337
+                        CROSS JOIN
+                        (
+                           SELECT
+                              t_340.key_c1_c339 AS c_305
+                           FROM
+                           (
+                              SELECT
+                                 as_agg_126cbbd1_no_t338.key_c1 AS key_c1_c339
+                              FROM
+                                 `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_126cbbd1_none AS as_agg_126cbbd1_no_t338
+                              WHERE
+                                 as_agg_126cbbd1_no_t338.key_c1 = &apos;1998-02-01&apos;
+                              GROUP BY
+                                 1
+                           ) AS t_340
+                           WHERE
+                              true
+                           GROUP BY
+                              1
+                        ) AS t_341
+                        GROUP BY
+                           1,
+                           2
+                     ) AS t_372
+                     JOIN
+                     (
+                        SELECT
+                           t_343.c_304 AS c_304,
+                           t_347.c_307 AS c_307
+                        FROM
+                        (
+                           SELECT
+                              as_agg_126cbbd1_no_t342.key_c1 AS c_304
+                           FROM
+                              `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_126cbbd1_none AS as_agg_126cbbd1_no_t342
+                           WHERE
+                              true
+                           GROUP BY
+                              1
+                        ) AS t_343
+                        CROSS JOIN
+                        (
+                           SELECT
+                              t_346.key_c1_c345 AS c_307
+                           FROM
+                           (
+                              SELECT
+                                 as_agg_126cbbd1_no_t344.key_c1 AS key_c1_c345
+                              FROM
+                                 `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_126cbbd1_none AS as_agg_126cbbd1_no_t344
+                              WHERE
+                                 as_agg_126cbbd1_no_t344.key_c1 = &apos;1999-02-01&apos;
+                              GROUP BY
+                                 1
+                           ) AS t_346
+                           WHERE
+                              true
+                           GROUP BY
+                              1
+                        ) AS t_347
+                        GROUP BY
+                           1,
+                           2
+                     ) AS t_373
+                     ON
+                        t_372.c_304 = t_373.c_304
+                     GROUP BY
+                        2,
+                        3
+                  ) AS t_374
+                  ON
+                  (
+                        t_335.c_304 &gt;= t_374.c_310
+                     OR
+                           t_374.c_310 IS NULL
+                        AND
+                           t_374.c_311 IS NOT NULL )
+                  AND
+                  (
+                        t_335.c_304 &lt;= t_374.c_311
+                     OR
+                           t_374.c_310 IS NOT NULL
+                        AND
+                           t_374.c_311 IS NULL )
+                  GROUP BY
+                     1,
+                     2
+               ) AS t_375
+               JOIN
+               (
+                  SELECT
+                     t_357.d_product_manufact_c350 AS d_product_manufact_gbakc3,
+                     t_357.sold_calendar_quar_c355 AS sold_calendar_quar_gbakc4,
+                     SUM(t_357.m_store_sales_pric_c352) AS c_166,
+                     t_357.key_c3_c349 AS d_product_manufact_gbakc1,
+                     t_357.key_c8_c354 AS sold_calendar_quar_gbakc2,
+                     t_357.key_c8_c354 AS c_303
+                  FROM
+                  (
+                     SELECT
+                        as_agg_2f6af26d_q5_t348.d_product_brand_name_c12 AS d_product_brand_na_c351,
+                        as_agg_2f6af26d_q5_t348.d_product_class_name_c13 AS d_product_class_na_c353,
+                        as_agg_2f6af26d_q5_t348.d_product_manufacturer_id_c14 AS d_product_manufact_c350,
+                        as_agg_2f6af26d_q5_t348.i_category_c10 AS i_category_c10_c356,
+                        as_agg_2f6af26d_q5_t348.key_c3 AS key_c3_c349,
+                        as_agg_2f6af26d_q5_t348.key_c8 AS key_c8_c354,
+                        as_agg_2f6af26d_q5_t348.m_store_sales_price_c15 AS m_store_sales_pric_c352,
+                        as_agg_2f6af26d_q5_t348.sold_calendar_quarter_c11 AS sold_calendar_quar_c355
+                     FROM
+                        `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_2f6af26d_q53 AS as_agg_2f6af26d_q5_t348
+                     WHERE
+                        as_agg_2f6af26d_q5_t348.sold_calendar_quarter_c11 IN (&apos;1998Q2&apos;, &apos;1998Q3&apos;, &apos;1998Q4&apos;, &apos;1999Q1&apos;, &apos;1999Q2&apos;)
+                     AND
+                     (
+                              as_agg_2f6af26d_q5_t348.d_product_class_name_c13 IN (&apos;personal&apos;, &apos;portable&apos;, &apos;reference&apos;, &apos;self-help&apos;)
+                           AND
+                              as_agg_2f6af26d_q5_t348.i_category_c10 IN (&apos;Books&apos;, &apos;Children&apos;, &apos;Electronics&apos;)
+                           AND
+                              as_agg_2f6af26d_q5_t348.d_product_brand_name_c12 IN (&apos;exportiunivamalg #9&apos;, &apos;scholaramalgamalg #14&apos;, &apos;scholaramalgamalg #7&apos;, &apos;scholaramalgamalg #9&apos;)
+                        OR
+                              as_agg_2f6af26d_q5_t348.d_product_class_name_c13 IN (&apos;accessories&apos;, &apos;classical&apos;, &apos;fragrances&apos;, &apos;pants&apos;)
+                           AND
+                              as_agg_2f6af26d_q5_t348.i_category_c10 IN (&apos;Women&apos;, &apos;Music&apos;, &apos;Men&apos;)
+                           AND
+                              as_agg_2f6af26d_q5_t348.d_product_brand_name_c12 IN (&apos;amalgimporto #1&apos;, &apos;edu packscholar #1&apos;, &apos;exportiimporto #1&apos;, &apos;importoamalg #1&apos;) )
+                  ) AS t_357
+                  WHERE
+                     true
+                  GROUP BY
+                     1,
+                     2,
+                     4,
+                     5,
+                     6
+               ) AS t_359
+               ON
+                  t_375.c_313 = t_359.sold_calendar_quar_gbakc2
+               GROUP BY
+                  1,
+                  2,
+                  6,
+                  7
+            ) AS t_376
+            JOIN
+            (
+               SELECT
+                  t_369.d_product_manufact_c362 AS d_product_manufact_gbakc3,
+                  t_369.sold_calendar_quar_c367 AS sold_calendar_quar_gbakc4,
+                  SUM(t_369.m_store_sales_pric_c364) AS c_166,
+                  t_369.key_c3_c361 AS d_product_manufact_gbakc1,
+                  t_369.key_c8_c366 AS sold_calendar_quar_gbakc2
+               FROM
+               (
+                  SELECT
+                     as_agg_2f6af26d_q5_t360.d_product_brand_name_c12 AS d_product_brand_na_c363,
+                     as_agg_2f6af26d_q5_t360.d_product_class_name_c13 AS d_product_class_na_c365,
+                     as_agg_2f6af26d_q5_t360.d_product_manufacturer_id_c14 AS d_product_manufact_c362,
+                     as_agg_2f6af26d_q5_t360.i_category_c10 AS i_category_c10_c368,
+                     as_agg_2f6af26d_q5_t360.key_c3 AS key_c3_c361,
+                     as_agg_2f6af26d_q5_t360.key_c8 AS key_c8_c366,
+                     as_agg_2f6af26d_q5_t360.m_store_sales_price_c15 AS m_store_sales_pric_c364,
+                     as_agg_2f6af26d_q5_t360.sold_calendar_quarter_c11 AS sold_calendar_quar_c367
+                  FROM
+                     `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_2f6af26d_q53 AS as_agg_2f6af26d_q5_t360
+                  WHERE
+                     as_agg_2f6af26d_q5_t360.sold_calendar_quarter_c11 IN (&apos;1998Q2&apos;, &apos;1998Q3&apos;, &apos;1998Q4&apos;, &apos;1999Q1&apos;, &apos;1999Q2&apos;)
+                  AND
+                  (
+                           as_agg_2f6af26d_q5_t360.d_product_class_name_c13 IN (&apos;personal&apos;, &apos;portable&apos;, &apos;reference&apos;, &apos;self-help&apos;)
+                        AND
+                           as_agg_2f6af26d_q5_t360.i_category_c10 IN (&apos;Books&apos;, &apos;Children&apos;, &apos;Electronics&apos;)
+                        AND
+                           as_agg_2f6af26d_q5_t360.d_product_brand_name_c12 IN (&apos;exportiunivamalg #9&apos;, &apos;scholaramalgamalg #14&apos;, &apos;scholaramalgamalg #7&apos;, &apos;scholaramalgamalg #9&apos;)
+                     OR
+                           as_agg_2f6af26d_q5_t360.d_product_class_name_c13 IN (&apos;accessories&apos;, &apos;classical&apos;, &apos;fragrances&apos;, &apos;pants&apos;)
+                        AND
+                           as_agg_2f6af26d_q5_t360.i_category_c10 IN (&apos;Women&apos;, &apos;Music&apos;, &apos;Men&apos;)
+                        AND
+                           as_agg_2f6af26d_q5_t360.d_product_brand_name_c12 IN (&apos;amalgimporto #1&apos;, &apos;edu packscholar #1&apos;, &apos;exportiimporto #1&apos;, &apos;importoamalg #1&apos;) )
+               ) AS t_369
+               WHERE
+                  true
+               GROUP BY
+                  1,
+                  2,
+                  4,
+                  5
+            ) AS t_371
+            ON
+               t_376.d_product_manufact_gbakc1 = t_371.d_product_manufact_gbakc1
+            GROUP BY
+               1,
+               2,
+               6,
+               7
+      ) AS t_378
+      GROUP BY
+         1,
+         2,
+         6,
+         7
+   ) AS t_379
+   GROUP BY
+      1,
+      2,
+      6,
+      7
+) AS t_511
+WHERE
+   t_511.sum_avg_quarter_sa_gbakc7 &gt; 0.1
+ORDER BY
+   1 ASC,
+   2 ASC,
+   3 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 55 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 55
+ -- ${CacheBuster}
+SELECT
+   t_38.d_product_brand_id_gbakc3 AS d_product_brand_id,
+   t_38.d_product_brand_na_gbakc4 AS d_product_brand_name,
+   t_38.sum_m_ss_ext_sales_gbakc5 AS sum_m_ss_ext_sales_price_sum_ok
+FROM
+(
+   SELECT
+      t_36.d_product_brand_id_c30 AS d_product_brand_id_gbakc3,
+      t_36.d_product_brand_na_c28 AS d_product_brand_na_gbakc4,
+      SUM(t_36.m_ss_ext_sales_pri_c35) AS sum_m_ss_ext_sales_gbakc5,
+      t_36.key_c9_c34 AS d_product_brand_id_gbakc1,
+      t_36.key_c4_c33 AS d_product_brand_na_gbakc2
+   FROM
+   (
+      SELECT
+         as_agg_76edb6f5_q5_t27.d_product_brand_id_c12 AS d_product_brand_id_c30,
+         as_agg_76edb6f5_q5_t27.d_product_brand_name_c13 AS d_product_brand_na_c28,
+         as_agg_76edb6f5_q5_t27.d_product_manager_id_c14 AS d_product_manager__c31,
+         as_agg_76edb6f5_q5_t27.key_c4 AS key_c4_c33,
+         as_agg_76edb6f5_q5_t27.key_c9 AS key_c9_c34,
+         as_agg_76edb6f5_q5_t27.m_ss_ext_sales_price_sum_c15 AS m_ss_ext_sales_pri_c35,
+         as_agg_76edb6f5_q5_t27.sold_calendar_year_week_c10 AS sold_calendar_year_c32,
+         as_agg_76edb6f5_q5_t27.sold_d_month_of_year_c11 AS sold_d_month_of_ye_c29
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_76edb6f5_q52 AS as_agg_76edb6f5_q5_t27
+      WHERE
+         as_agg_76edb6f5_q5_t27.d_product_manager_id_c14 = 90
+      AND
+         as_agg_76edb6f5_q5_t27.sold_calendar_year_week_c10 = 1998
+      AND
+         as_agg_76edb6f5_q5_t27.sold_d_month_of_year_c11 = 12
+   ) AS t_36
+   WHERE
+      true
+   GROUP BY
+      1,
+      2,
+      4,
+      5
+) AS t_38
+ORDER BY
+   3 DESC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 56 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 56
+ -- ${CacheBuster}
+SELECT
+   t_67.d_product_item_id_gbakc2 AS d_product_item_id,
+   t_67.sum_total_ext_sale_gbakc3 AS sum_total__ext_sales_price_ok
+FROM
+(
+   SELECT
+      t_51.d_product_item_id__c45 AS d_product_item_id_gbakc2,
+      CASE WHEN COALESCE(SUM(t_51.m_ss_ext_sales_pri_c43), SUM(t_51.m_ws_ext_sales_pri_c50), SUM(t_51.m_cs_ext_sales_pri_c48)) IS NULL THEN NULL ELSE ((COALESCE(SUM(t_51.m_ss_ext_sales_pri_c43), 0) + COALESCE(SUM(t_51.m_ws_ext_sales_pri_c50), 0)) + COALESCE(SUM(t_51.m_cs_ext_sales_pri_c48), 0)) END AS sum_total_ext_sale_gbakc3,
+      t_51.key_c8_c46 AS d_product_item_id_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_219e5692_q5_t41.d_customer_gmt_offset_c14 AS d_customer_gmt_off_c42,
+         as_agg_219e5692_q5_t41.d_i_color_c15 AS d_i_color_c15_c47,
+         as_agg_219e5692_q5_t41.d_product_item_id_c16 AS d_product_item_id__c45,
+         as_agg_219e5692_q5_t41.key_c8 AS key_c8_c46,
+         as_agg_219e5692_q5_t41.m_cs_ext_sales_price_sum_c17 AS m_cs_ext_sales_pri_c48,
+         as_agg_219e5692_q5_t41.m_ss_ext_sales_price_sum_c20 AS m_ss_ext_sales_pri_c43,
+         as_agg_219e5692_q5_t41.m_ws_ext_sales_price_sum_c23 AS m_ws_ext_sales_pri_c50,
+         as_agg_219e5692_q5_t41.sold_calendar_year_c12 AS sold_calendar_year_c49,
+         as_agg_219e5692_q5_t41.sold_d_month_of_year_c13 AS sold_d_month_of_ye_c44
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_219e5692_q56_q60 AS as_agg_219e5692_q5_t41
+      WHERE
+         as_agg_219e5692_q5_t41.d_i_color_c15 IN (&apos;floral&apos;, &apos;ivory&apos;, &apos;royal&apos;)
+      AND
+         as_agg_219e5692_q5_t41.d_customer_gmt_offset_c14 = -5
+      AND
+         as_agg_219e5692_q5_t41.sold_calendar_year_c12 = 2002
+      AND
+         as_agg_219e5692_q5_t41.sold_d_month_of_year_c13 = 5
+   ) AS t_51
+   WHERE
+      true
+   GROUP BY
+      1,
+      3
+) AS t_67
+ORDER BY
+   2 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 60 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query60
+ -- ${CacheBuster}
+SELECT
+   t_67.d_product_item_id_gbakc2 AS d_product_item_id,
+   t_67.sum_total_ext_sale_gbakc3 AS sum_total__ext_sales_price_ok
+FROM
+(
+   SELECT
+      t_51.d_product_item_id__c45 AS d_product_item_id_gbakc2,
+      CASE WHEN COALESCE(SUM(t_51.m_ss_ext_sales_pri_c43), SUM(t_51.m_ws_ext_sales_pri_c50), SUM(t_51.m_cs_ext_sales_pri_c48)) IS NULL THEN NULL ELSE ((COALESCE(SUM(t_51.m_ss_ext_sales_pri_c43), 0) + COALESCE(SUM(t_51.m_ws_ext_sales_pri_c50), 0)) + COALESCE(SUM(t_51.m_cs_ext_sales_pri_c48), 0)) END AS sum_total_ext_sale_gbakc3,
+      t_51.key_c8_c46 AS d_product_item_id_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_219e5692_q5_t41.d_customer_gmt_offset_c14 AS d_customer_gmt_off_c42,
+         as_agg_219e5692_q5_t41.d_product_item_id_c16 AS d_product_item_id__c45,
+         as_agg_219e5692_q5_t41.i_category_c11 AS i_category_c11_c47,
+         as_agg_219e5692_q5_t41.key_c8 AS key_c8_c46,
+         as_agg_219e5692_q5_t41.m_cs_ext_sales_price_sum_c17 AS m_cs_ext_sales_pri_c48,
+         as_agg_219e5692_q5_t41.m_ss_ext_sales_price_sum_c20 AS m_ss_ext_sales_pri_c43,
+         as_agg_219e5692_q5_t41.m_ws_ext_sales_price_sum_c23 AS m_ws_ext_sales_pri_c50,
+         as_agg_219e5692_q5_t41.sold_calendar_year_c12 AS sold_calendar_year_c49,
+         as_agg_219e5692_q5_t41.sold_d_month_of_year_c13 AS sold_d_month_of_ye_c44
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_219e5692_q56_q60 AS as_agg_219e5692_q5_t41
+      WHERE
+         as_agg_219e5692_q5_t41.d_customer_gmt_offset_c14 = -6
+      AND
+         as_agg_219e5692_q5_t41.sold_d_month_of_year_c13 = 9
+      AND
+         as_agg_219e5692_q5_t41.i_category_c11 = &apos;Jewelry&apos;
+      AND
+         as_agg_219e5692_q5_t41.sold_calendar_year_c12 = 1999
+   ) AS t_51
+   WHERE
+      true
+   GROUP BY
+      1,
+      3
+) AS t_67
+ORDER BY
+   1 ASC,
+   2 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 61 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 61
+ -- ${CacheBuster}
+SELECT
+   SUM(t_36.m_ss_ext_sales_pri_c30) AS sum_m_ss_ext_sales_price_promotion_ok,
+   SUM(t_36.m_ss_ext_sales_pri_c28) AS sum_m_ss_ext_sales_price_sum_ok
+FROM
+(
+   SELECT
+      as_agg_b8d4f5c9_q6_t25.d_channel_direct_mail_c18 AS d_channel_direct_m_c32,
+      as_agg_b8d4f5c9_q6_t25.d_channel_email_c19 AS d_channel_email_c1_c34,
+      as_agg_b8d4f5c9_q6_t25.d_channel_tv_c20 AS d_channel_tv_c20_c33,
+      as_agg_b8d4f5c9_q6_t25.d_customer_gmt_offset_c21 AS d_customer_gmt_off_c29,
+      as_agg_b8d4f5c9_q6_t25.d_store_gmt_offset_c22 AS d_store_gmt_offset_c31,
+      as_agg_b8d4f5c9_q6_t25.i_category_c15 AS i_category_c15_c26,
+      as_agg_b8d4f5c9_q6_t25.m_ss_ext_sales_price_sum_c26 AS m_ss_ext_sales_pri_c28,
+      as_agg_b8d4f5c9_q6_t25.m_ss_ext_sales_price_prom_c23 AS m_ss_ext_sales_pri_c30,
+      as_agg_b8d4f5c9_q6_t25.sold_calendar_year_week_c16 AS sold_calendar_year_c27,
+      as_agg_b8d4f5c9_q6_t25.sold_d_month_of_year_c17 AS sold_d_month_of_ye_c35
+   FROM
+      `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_b8d4f5c9_q61 AS as_agg_b8d4f5c9_q6_t25
+   WHERE
+      as_agg_b8d4f5c9_q6_t25.d_store_gmt_offset_c22 = -6
+   AND
+      as_agg_b8d4f5c9_q6_t25.d_customer_gmt_offset_c21 = -6
+   AND
+      as_agg_b8d4f5c9_q6_t25.sold_d_month_of_year_c17 = 12
+   AND
+      as_agg_b8d4f5c9_q6_t25.sold_calendar_year_week_c16 = 1998
+   AND
+   (
+         as_agg_b8d4f5c9_q6_t25.d_channel_direct_mail_c18 = &apos;Y&apos;
+      OR
+         as_agg_b8d4f5c9_q6_t25.d_channel_email_c19 = &apos;Y&apos;
+      OR
+         as_agg_b8d4f5c9_q6_t25.d_channel_tv_c20 = &apos;Y&apos; )
+   AND
+      as_agg_b8d4f5c9_q6_t25.i_category_c15 = &apos;Home&apos;
+) AS t_36
+WHERE
+   true
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 71 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 71
+ -- ${CacheBuster}
+SELECT
+   t_106.d_product_brand_id_gbakc5 AS d_product_brand_id,
+   t_106.d_product_brand_na_gbakc6 AS d_product_brand_name,
+   t_106.sold_d_hour_gbakc7 AS sold_d_hour,
+   t_106.sold_d_minute_gbakc8 AS sold_d_minute,
+   t_106.sum_total_ext_sale_gbakc9 AS sum_total__ext_sales_price_ok
+FROM
+(
+   SELECT
+      t_81.d_product_brand_id_c72 AS d_product_brand_id_gbakc5,
+      t_81.d_product_brand_na_c66 AS d_product_brand_na_gbakc6,
+      t_81.sold_d_hour_c17_c77 AS sold_d_hour_gbakc7,
+      t_81.sold_d_minute_c19_c75 AS sold_d_minute_gbakc8,
+      CASE WHEN COALESCE(SUM(t_81.m_ss_ext_sales_pri_c79), SUM(t_81.m_ws_ext_sales_pri_c78), SUM(t_81.m_cs_ext_sales_pri_c71)) IS NULL THEN NULL ELSE ((COALESCE(SUM(t_81.m_ss_ext_sales_pri_c79), 0) + COALESCE(SUM(t_81.m_ws_ext_sales_pri_c78), 0)) + COALESCE(SUM(t_81.m_cs_ext_sales_pri_c71), 0)) END AS sum_total_ext_sale_gbakc9,
+      t_81.key_c15_c70 AS d_product_brand_id_gbakc1,
+      t_81.key_c6_c73 AS d_product_brand_na_gbakc2,
+      t_81.key_c11_c68 AS sold_d_hour_gbakc3,
+      t_81.key_c14_c76 AS sold_d_minute_gbakc4
+   FROM
+   (
+      SELECT
+         as_agg_d2c4b9c8_q7_t65.d_product_brand_id_c21 AS d_product_brand_id_c72,
+         as_agg_d2c4b9c8_q7_t65.d_product_brand_name_c22 AS d_product_brand_na_c66,
+         as_agg_d2c4b9c8_q7_t65.d_product_manager_id_c23 AS d_product_manager__c69,
+         as_agg_d2c4b9c8_q7_t65.key_c11 AS key_c11_c68,
+         as_agg_d2c4b9c8_q7_t65.key_c14 AS key_c14_c76,
+         as_agg_d2c4b9c8_q7_t65.key_c15 AS key_c15_c70,
+         as_agg_d2c4b9c8_q7_t65.key_c4 AS key_c4_c67,
+         as_agg_d2c4b9c8_q7_t65.key_c6 AS key_c6_c73,
+         as_agg_d2c4b9c8_q7_t65.m_cs_ext_sales_price_sum_c24 AS m_cs_ext_sales_pri_c71,
+         as_agg_d2c4b9c8_q7_t65.m_ss_ext_sales_price_sum_c27 AS m_ss_ext_sales_pri_c79,
+         as_agg_d2c4b9c8_q7_t65.m_ws_ext_sales_price_sum_c30 AS m_ws_ext_sales_pri_c78,
+         as_agg_d2c4b9c8_q7_t65.sold_d_hour_c17 AS sold_d_hour_c17_c77,
+         as_agg_d2c4b9c8_q7_t65.sold_d_meal_time_c18 AS sold_d_meal_time_c_c80,
+         as_agg_d2c4b9c8_q7_t65.sold_d_minute_c19 AS sold_d_minute_c19_c75,
+         as_agg_d2c4b9c8_q7_t65.sold_d_month_of_year_c20 AS sold_d_month_of_ye_c74
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d2c4b9c8_q71 AS as_agg_d2c4b9c8_q7_t65
+      WHERE
+         as_agg_d2c4b9c8_q7_t65.d_product_manager_id_c23 = 1
+      AND
+         as_agg_d2c4b9c8_q7_t65.sold_d_month_of_year_c20 = 12
+      AND
+         as_agg_d2c4b9c8_q7_t65.sold_d_meal_time_c18 IN (&apos;breakfast&apos;, &apos;dinner&apos;)
+   ) AS t_81
+   JOIN
+   (
+      SELECT
+         date_dim_t82.d_year AS d_year_c83
+      FROM
+         `benchmark-251817`.TPCDS_10TB.date_dim AS date_dim_t82
+      WHERE
+         date_dim_t82.d_year = 1998
+      GROUP BY
+         1
+   ) AS t_84
+   ON
+      t_81.key_c4_c67 = t_84.d_year_c83
+   WHERE
+      true
+   GROUP BY
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+) AS t_106
+ORDER BY
+   5 DESC,
+   1 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 88 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 88
+ -- ${CacheBuster}
+SELECT
+   t_30.sold_d_morning_tim_gbakc2 AS sold_d_morning__time_tier,
+   t_30.sum_m_ss_row_count_gbakc3 AS sum_m_ss_row_counter_sum_ok
+FROM
+(
+   SELECT
+      t_28.sold_d_morning_tim_c23 AS sold_d_morning_tim_gbakc2,
+      SUM(t_28.m_ss_row_counter_s_c27) AS sum_m_ss_row_count_gbakc3,
+      t_28.key_c8_c26 AS sold_d_morning_tim_gbakc1
+   FROM
+   (
+      SELECT
+         as_agg_1b35f6f4_q8_t21.d_hd_dep_count_c10 AS d_hd_dep_count_c10_c25,
+         as_agg_1b35f6f4_q8_t21.d_hd_vehicle_count_c11 AS d_hd_vehicle_count_c22,
+         as_agg_1b35f6f4_q8_t21.d_store_name_c12 AS d_store_name_c12_c24,
+         as_agg_1b35f6f4_q8_t21.key_c8 AS key_c8_c26,
+         as_agg_1b35f6f4_q8_t21.m_ss_row_counter_sum_c13 AS m_ss_row_counter_s_c27,
+         as_agg_1b35f6f4_q8_t21.sold_d_morning_time_tier_c9 AS sold_d_morning_tim_c23
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_1b35f6f4_q88 AS as_agg_1b35f6f4_q8_t21
+      WHERE
+         as_agg_1b35f6f4_q8_t21.sold_d_morning_time_tier_c9 &lt;&gt; &apos;Other&apos;
+      AND
+      (
+               as_agg_1b35f6f4_q8_t21.d_hd_dep_count_c10 = 2
+            AND
+               as_agg_1b35f6f4_q8_t21.d_hd_vehicle_count_c11 &lt;= 4
+         OR
+               as_agg_1b35f6f4_q8_t21.d_hd_dep_count_c10 = 0
+            AND
+               as_agg_1b35f6f4_q8_t21.d_hd_vehicle_count_c11 &lt;= 2
+         OR
+               as_agg_1b35f6f4_q8_t21.d_hd_dep_count_c10 = -1
+            AND
+               as_agg_1b35f6f4_q8_t21.d_hd_vehicle_count_c11 &lt;= 1 )
+      AND
+         as_agg_1b35f6f4_q8_t21.d_store_name_c12 = &apos;ese&apos;
+   ) AS t_28
+   WHERE
+      true
+   GROUP BY
+      1,
+      3
+) AS t_30;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 96 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query">-- ATSCALE_AGGS_query96
+-- ${CacheBuster}
+SELECT
+   SUM(t_19.m_ss_row_counter_s_c18) AS sum_m_ss_row_counter_sum_ok
+FROM
+(
+   SELECT
+      as_agg_d81c747e_q9_t13.d_hd_dep_count_c11 AS d_hd_dep_count_c11_c16,
+      as_agg_d81c747e_q9_t13.d_store_name_c12 AS d_store_name_c12_c15,
+      as_agg_d81c747e_q9_t13.m_ss_row_counter_sum_c13 AS m_ss_row_counter_s_c18,
+      as_agg_d81c747e_q9_t13.sold_d_hour_c9 AS sold_d_hour_c9_c14,
+      as_agg_d81c747e_q9_t13.sold_d_minute_c10 AS sold_d_minute_c10_c17
+   FROM
+      `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d81c747e_q96 AS as_agg_d81c747e_q9_t13
+   WHERE
+      as_agg_d81c747e_q9_t13.d_store_name_c12 = &apos;ese&apos;
+   AND
+      as_agg_d81c747e_q9_t13.d_hd_dep_count_c11 = 5
+   AND
+      as_agg_d81c747e_q9_t13.sold_d_hour_c9 = 8
+   AND
+      as_agg_d81c747e_q9_t13.sold_d_minute_c10 &gt;= 30
+) AS t_19
+WHERE
+   true
+ORDER BY
+   1 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="SQL Test: SQL Query 98 - Label: ${Label} - Platform: ${Platform} - Threads: ${NumberOfThreads} - Loops: ${NumberOfLoops} - Interation: ${__BeanShell(vars.getIteration();,)}" enabled="true">
+          <stringProp name="dataSource">jdbcConfig</stringProp>
+          <stringProp name="query"> -- ATSCALE_AGGS_query 98
+ -- ${CacheBuster}
+SELECT
+   t_1.d_product_item_id AS d_product_item_id,
+   t_1.product_dimension AS product_dimension,
+   t_1.i_category AS i_category,
+   t_1.d_product_class_name AS d_product_class_name,
+   t_1.d_product_current_price AS d_product_current_price,
+   SUM(CASE WHEN t_58.x_measure__0 = 0 THEN NULL ELSE CASE WHEN t_58.x_measure__0 = 0 THEN NULL ELSE ((100 * t_1.m_ss_ext_sales_price_sum) / t_58.x_measure__0) END END) AS sum_calculation_6026871858440298504_ok,
+   SUM(t_1.m_ss_ext_sales_price_sum) AS sum_m_ss_ext_sales_price_sum_ok
+FROM
+(
+   SELECT
+      t_57.sold_time_dimensio_gbakc7 AS sold_time_dimension,
+      t_57.d_product_item_id_gbakc8 AS d_product_item_id,
+      t_57.m_ss_ext_sales_pri_gbakc9 AS m_ss_ext_sales_price_sum,
+      t_57.d_product_class_na_gbakc10 AS d_product_class_name,
+      t_57.product_dimension_gbakc11 AS product_dimension,
+      t_57.i_category_gbakc12 AS i_category,
+      t_57.d_product_current__gbakc13 AS d_product_current_price
+   FROM
+   (
+      SELECT
+         as_agg_d4434c75_q9_t54.sold_time_dimension_c10 AS sold_time_dimensio_gbakc7,
+         item_t55.i_item_id AS d_product_item_id_gbakc8,
+         SUM(as_agg_d4434c75_q9_t54.m_ss_ext_sales_price_sum_c13) AS m_ss_ext_sales_pri_gbakc9,
+         as_agg_d4434c75_q9_t54.d_product_class_name_c11 AS d_product_class_na_gbakc10,
+         as_agg_d4434c75_q9_t54.product_dimension_c9 AS product_dimension_gbakc11,
+         as_agg_d4434c75_q9_t54.i_category_c8 AS i_category_gbakc12,
+         as_agg_d4434c75_q9_t54.d_product_current_price_c12 AS d_product_current__gbakc13,
+         as_agg_d4434c75_q9_t54.key_c2 AS sold_time_dimensio_gbakc1,
+         item_t55.i_item_id AS d_product_item_id_gbakc2,
+         as_agg_d4434c75_q9_t54.key_c1 AS d_product_class_na_gbakc3,
+         as_agg_d4434c75_q9_t54.key_c5 AS product_dimension_gbakc4,
+         as_agg_d4434c75_q9_t54.key_c3 AS i_category_gbakc5,
+         as_agg_d4434c75_q9_t54.key_c4 AS d_product_current__gbakc6
+      FROM
+         `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_d4434c75_q98 AS as_agg_d4434c75_q9_t54
+      JOIN
+         `benchmark-251817`.TPCDS_10TB.item AS item_t55
+      ON
+         as_agg_d4434c75_q9_t54.key_c5 = item_t55.i_item_sk
+      WHERE
+         true
+      GROUP BY
+         1,
+         2,
+         4,
+         5,
+         6,
+         7,
+         8,
+         9,
+         10,
+         11,
+         12,
+         13
+   ) AS t_57
+) AS t_1
+JOIN
+(
+   SELECT
+      t_83.d_product_class_na_gbakc16 AS d_product_class_name,
+      t_83.x_measure_0_gbakc17 AS x_measure__0
+   FROM
+   (
+      SELECT
+         t_81.d_product_class_na_c79 AS d_product_class_na_gbakc16,
+         SUM(t_81.m_ss_ext_sales_pri_c77) AS x_measure_0_gbakc17,
+         t_81.key_c1_c76 AS d_product_class_na_gbakc15
+      FROM
+      (
+         SELECT
+            as_agg_429e0bf6_ic_t75.d_product_class_name_c7 AS d_product_class_na_c79,
+            as_agg_429e0bf6_ic_t75.i_category_c5 AS i_category_c5_c80,
+            as_agg_429e0bf6_ic_t75.key_c1 AS key_c1_c76,
+            as_agg_429e0bf6_ic_t75.m_ss_ext_sales_price_sum_c28 AS m_ss_ext_sales_pri_c77,
+            as_agg_429e0bf6_ic_t75.sold_time_dimension_c6 AS sold_time_dimensio_c78
+         FROM
+            `benchmark-251817`.TPCDS_SF10TCL_AGGREGATES.as_agg_429e0bf6_ictgr_sldtmdmn AS as_agg_429e0bf6_ic_t75
+         WHERE
+            as_agg_429e0bf6_ic_t75.i_category_c5 IN (&apos;Electronics&apos;, &apos;Shoes&apos;, &apos;Women&apos;)
+         AND
+            as_agg_429e0bf6_ic_t75.sold_time_dimension_c6 BETWEEN &apos;2002-05-27&apos; AND &apos;2002-06-26&apos;
+      ) AS t_81
+      WHERE
+         true
+      GROUP BY
+         1,
+         3
+   ) AS t_83
+) AS t_58
+ON
+   t_1.d_product_class_name = t_58.d_product_class_name
+WHERE
+   t_1.d_product_class_name IS NOT NULL
+AND
+   t_1.product_dimension IS NOT NULL
+AND
+   t_1.i_category IN (&apos;Electronics&apos;, &apos;Shoes&apos;, &apos;Women&apos;)
+AND
+   t_1.sold_time_dimension BETWEEN &apos;2002-05-27&apos; AND &apos;2002-06-26&apos;
+GROUP BY
+   1,
+   2,
+   3,
+   4,
+   5
+ORDER BY
+   3 ASC,
+   4 ASC,
+   1 ASC,
+   2 ASC,
+   7 ASC
+LIMIT 100;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Sleep 750 Milliseconds" enabled="true">
+            <stringProp name="ConstantTimer.delay">750</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">/home/ec2-user/jmeter/logs/DavesTestPlan-Mixed-${NumberOfThreads}-${NumberOfLoops}.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

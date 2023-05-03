@@ -1,0 +1,22 @@
+﻿,
+"SELECT
+    SUM( `TPC-DS Benchmark Model`.`m_ss_ext_sales_price_promotion` ) AS
+    `sum_m_ss_ext_sales_price_promotion_ok`,
+    SUM( `TPC-DS Benchmark Model`.`m_ss_ext_sales_price_sum` ) AS `sum_m_ss_ext_sales_price_sum_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    (
+        `TPC-DS Benchmark Model`.`d_channel_direct_mail` = 'Y'
+    OR  `TPC-DS Benchmark Model`.`d_channel_email` = 'Y'
+    OR  `TPC-DS Benchmark Model`.`d_channel_tv` = 'Y')
+AND `TPC-DS Benchmark Model`.`I Category` = 'Home'
+AND `TPC-DS Benchmark Model`.`Sold Calendar Year-Week` = 1998
+AND `TPC-DS Benchmark Model`.`Sold d_month_of_year` = 12
+AND `TPC-DS Benchmark Model`.`d_customer_gmt_offset` = -6.
+AND `TPC-DS Benchmark Model`.`d_store_gmt_offset` = -6.
+GROUP BY
+    1",
+,
+sum_m_ss_ext_sales_price_promotion_ok,sum_m_ss_ext_sales_price_sum_ok
+15852138622,30642170005

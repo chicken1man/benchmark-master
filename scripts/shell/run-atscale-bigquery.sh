@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "AtScale.BigQuery.2021Q2.BIEngine.R2" -j "/Users/davidmariani/workspace/atscale/jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-AtScale.jmx" -d "AtScale.BigQuery" -s "jdbc:hive2://atscale-finance-dev.corp.atscale.com:11111" -u "*****" -p "*****" -n "tpc-ds benchmark model - bigquery" -l "../../../Benchmark-Results"

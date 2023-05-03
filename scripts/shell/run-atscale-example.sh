@@ -1,0 +1,1 @@
+./RunJMeterBenchmark.sh -r "Test" -j "../../../jmeter/apache-jmeter-5.1.1/bin/jmeter.sh" -x "../jmeter/TPC-DS-Benchmark-AtScale.jmx" -d "AtScale" -s "jdbc:hive2://ec2-13-59-230-248.us-east-2.compute.amazonaws.com:11111" -u "admin" -p "admin" -n "tpc-ds benchmark model - snowflake" -l "../../../Benchmark-Results" -m "test"

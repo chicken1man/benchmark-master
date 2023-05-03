@@ -1,0 +1,143 @@
+﻿,,,,,,
+"SELECT
+    `TPC-DS Benchmark Model`.`d_customer_last_name`          AS `d_customer_last_name`,
+    `TPC-DS Benchmark Model`.`d_customer_first_name`         AS `d_customer_first_name`,
+    `TPC-DS Benchmark Model`.`d_customer_city`               AS `d_customer_city`,
+    `TPC-DS Benchmark Model`.`Sold d_customer_city`          AS `sold_d_customer_city`,
+    `TPC-DS Benchmark Model`.`d_store_sales_ticket_number`   AS `d_store_sales_ticket_number`,
+    SUM(`TPC-DS Benchmark Model`.`m_ss_net_profit_sum`)      AS `sum_m_ss_net_profit_sum_ok`,
+    SUM( `TPC-DS Benchmark Model`.`m_store_coupon_amt_sum` ) AS `sum_m_store_coupon_amt_sum_ok`
+FROM
+    `tpc-ds benchmark model`.`tpc-ds benchmark model` `TPC-DS Benchmark Model`
+WHERE
+    (
+        `TPC-DS Benchmark Model`.`d_hd_dep_count` = 4
+    OR  `TPC-DS Benchmark Model`.`d_hd_vehicle_count` = 3 )
+AND `TPC-DS Benchmark Model`.`Sold d_customer_city` <> `TPC-DS Benchmark Model`.`d_customer_city`
+AND `TPC-DS Benchmark Model`.`d_customer_first_name` IS NOT NULL
+AND `TPC-DS Benchmark Model`.`d_customer_last_name` IS NOT NULL
+AND `TPC-DS Benchmark Model`.`Sold Calendar Year` IN (1999,
+                                                      2000,
+                                                      2001)
+AND `TPC-DS Benchmark Model`.`Sold d_day_of_week` IN (0,
+                                                      6)
+AND `TPC-DS Benchmark Model`.`d_store_city` IN ( 'Oakdale',
+                                                'Pleasant Grove',
+                                                'Rockville',
+                                                'Springfield',
+                                                'Woodland' )
+GROUP BY
+    1,
+    2,
+    3,
+    4,
+    5    
+ORDER BY
+    1,
+    2,
+    3,
+    4,
+    5 
+    LIMIT 100",,,,,,
+,,,,,,
+d_customer_last_name,d_customer_first_name,d_customer_city,sold_d_customer_city,d_store_sales_ticket_number,sum_m_ss_net_profit_sum_ok,sum_m_store_coupon_amt_sum_ok
+Aaron,Adam,Crossroads,Kingston,911848673,-4624.69,93.81
+Aaron,Adam,White Oak,Glenwood,274050168,-1156.92,0
+Aaron,Alta,Five Forks,Greenville,1864034141,-18927.33,2218.2
+Aaron,Amelia,White Oak,Hillcrest,692983228,-17753.79,520.78
+Aaron,Angel,Mount Olive,Oakwood,176361805,-1990.92,423.2
+Aaron,Angela,Enterprise,Wilson,1944828380,-6260.13,0
+Aaron,Angie,Greenwood,Lebanon,975658062,-10814.02,6182.67
+Aaron,Anna,Maple Grove,Buena Vista,157115053,-13949.36,197.79
+Aaron,Anthony,Greenfield,Sunnyside,261699933,-8545.03,45.14
+Aaron,Arthur,Centerville,Highland Park,1658955957,-2690.28,115.61
+Aaron,Arthur,Lakewood,Shady Grove,558854569,-12201.19,13744.54
+Aaron,Ashley,Woodlawn,Bethel,842282555,-15122.62,3903.77
+Aaron,Audrey,Oakland,Newport,1542667250,-11258.32,2178.05
+Aaron,August,Pleasant Hill,Greenwood,1809754041,-7678.85,480.25
+Aaron,Barbara,Glendale,Georgetown,1478303177,-7851.52,2203.58
+Aaron,Barbara,Woodland,Westgate,831517798,-10120.84,3674.1
+Aaron,Benjamin,King,Union Hill,1277117198,-6644.37,0
+Aaron,Benjamin,Kingston,Woodville,86396078,-16201.76,2396.06
+Aaron,Beulah,Shiloh,New Hope,1998591347,-4840.56,1233.01
+Aaron,Bobby,Brownsville,Antioch,1512039073,-2331.55,4629.82
+Aaron,Bonnie,Centerville,Oakwood,219957922,-13192.27,175.2
+Aaron,Bonnie,Greenwood,Friendship,1145604909,-7779.73,0
+Aaron,Brandon,Bunker Hill,Concord,1281526403,-7663.82,9802.84
+Aaron,Bruce,Kingston,Wildwood,599184992,-9300.43,3075.42
+Aaron,Carl,Guthrie,Georgetown,1491509171,-5530.61,5658.27
+Aaron,Carl,Union Hill,Fairview,1316451911,-7598.23,1994.64
+Aaron,Celia,Sunset Beach,Summit,178520867,-9309.73,1426.95
+Aaron,Cherie,Oak Ridge,Farmington,1408763051,-28003.37,4064.3
+Aaron,Cheryl,Oak Grove,Oak Ridge,921977245,-19246.05,2471.71
+Aaron,Christina,Green Acres,Pleasant Hill,595142140,-5089.98,804.32
+Aaron,Christopher,Bethesda,Ashland,1258507027,-4705.86,0
+Aaron,Christopher,Riverview,Cedar Grove,299603422,-6995.48,1101.1
+Aaron,Clara,Oakwood,Stringtown,1667835301,-16368.15,1870.66
+Aaron,Clarence,Tremont,Union,1599612655,-11476.67,1344.67
+Aaron,Clarita,Belmont,Lakeview,682457945,-2849.01,3175.35
+Aaron,Colleen,Post Oak,Bridgeport,1715879916,-2133.6,0
+Aaron,Crystal,Jamestown,Brownsville,1790704531,-8395.8,0
+Aaron,Cynthia,Cedar Grove,Scottsville,1107147887,-9537.21,3117.1
+Aaron,Dale,Forest Hills,Union,1816650753,810.72,629.79
+Aaron,Danny,Oak Hill,Unionville,1142142014,-1432.38,30.94
+Aaron,Darrel,Riverside,Mount Olive,2001562738,-17311.47,640.09
+Aaron,David,Georgetown,Marion,1985212585,-10922.64,5616.24
+Aaron,David,Lebanon,Five Forks,1771121773,-9165.96,4420.53
+Aaron,David,Lincoln,Antioch,1942092847,-759.72,328.83
+Aaron,David,Marion,Oakwood,2142650484,-3267.19,631.34
+Aaron,Delores,Stringtown,Friendship,2093775359,-9035.43,65.87
+Aaron,Diana,Bunker Hill,Gravel Hill,393437332,4683.53,1974.02
+Aaron,Dina,Fairview,Forest Hills,971252294,-7948.14,1845.46
+Aaron,Donald,Crossroads,Lakeview,1429908159,-700.38,927.37
+Aaron,Donald,Crossroads,Riverview,1023996245,-14458.99,4958.46
+Aaron,Donald,Shady Grove,Maple Grove,1989454792,-8699.25,8622.44
+Aaron,Donna,Harmony,Wildwood,866816089,-4329.28,5128.41
+Aaron,Dora,Marion,Edgewood,492838442,-10092.98,450.27
+Aaron,Dorathy,Providence,New Hope,459180775,-7103.17,2486.87
+Aaron,Dorothy,Buena Vista,Greenville,1591225015,-7205.36,2143.22
+Aaron,Dorothy,Bunker Hill,Lakewood,904679414,-4872.77,2280.27
+Aaron,Dorothy,Mountain View,Lebanon,55164106,-18173.81,7292.53
+Aaron,Douglas,Woodlawn,Fairview,1540697714,-8310.22,3754.57
+Aaron,Douglas,Woodlawn,Glenville,288811635,-10379.52,3697.84
+Aaron,Edward,Brownsville,Wilton,1841643977,-2794.29,6725.71
+Aaron,Edward,Liberty,Crossroads,1940543934,-5970.54,553.28
+Aaron,Edward,Marion,Doyle,1464092901,-5544.62,0
+Aaron,Edward,Newport,Five Forks,473021130,-14367.46,3561.48
+Aaron,Edward,Newport,Woodbine,1991730836,-4645.4,650.53
+Aaron,Edward,Rockwood,Pine Valley,785790342,-31689.67,4557.41
+Aaron,Elias,Belleview,Greenfield,870009993,-14398.26,1560.02
+Aaron,Elizabeth,Macedonia,Empire,550084867,-15562.71,1053.88
+Aaron,Elizabeth,Oakdale,Antioch,1450951334,-21514.25,1611.81
+Aaron,Elizabeth,Waterloo,Glendale,809963070,-8733.45,4220.83
+Aaron,Eloisa,Edgewood,Fairfield,1005288784,-4315.99,0
+Aaron,Elsie,Ashland,Mount Vernon,1892925659,-1121.93,882.28
+Aaron,Emory,Waterloo,Lakeside,855162250,-11438.63,254.1
+Aaron,Erik,White Oak,Jackson,722764732,-1054.16,65.23
+Aaron,Ernestine,Centerville,Oak Ridge,336697548,-4823.2,2957.66
+Aaron,Essie,Lincoln,Fairview,1679308894,-4902.6,41.48
+Aaron,Esther,Hidden Valley,Springhill,966036787,-12619.31,11.95
+Aaron,Eugene,Five Points,Greenville,1058841807,-5311.82,0
+Aaron,Fernando,Union Hill,Welcome,1303634053,-12116.49,6925.85
+Aaron,Freda,Oakwood,Sunnyside,1967690963,-17197.08,1229.78
+Aaron,George,Richardson,Mountain View,2143790829,-2519.87,0
+Aaron,George,Sunnyside,Lebanon,463303561,-11188.65,3839.46
+Aaron,Gerald,Pine Grove,Springfield,53994155,-17101.39,4075
+Aaron,Gertrude,Collinsville,Franklin,1393261187,-9612.11,56.03
+Aaron,Guillermo,Clifton,Friendship,1683770846,-17892.31,1924.9
+Aaron,Gus,Wildwood,Mount Olive,637460770,-7408.46,2393.77
+Aaron,Gwendolyn,Lakeview,Walnut Grove,2074392117,-1957.29,473.76
+Aaron,Hallie,Walnut Grove,Crossroads,1394659387,-1293.47,444.62
+Aaron,Hector,Valley View,Five Forks,196195419,3973.51,28.27
+Aaron,James,Buena Vista,Riverview,1963582879,-6868,24.28
+Aaron,James,Riverside,Concord,964385187,-12910.52,5456.1
+Aaron,James,Saratoga,Newtown,86243073,-24287.17,8316.55
+Aaron,James,Walnut Grove,Harmony,684480379,-9942.55,6278.01
+Aaron,Janet,Harmony,Plainview,1973736703,-9824.67,3440.39
+Aaron,Jason,Ashland,Union Hill,1786076520,-11141.52,1341.9
+Aaron,Jeannette,Highland,Walnut Grove,1467613217,-12835.34,150.98
+Aaron,Jennifer,Summit,Dudley,1171028940,-17000.36,990.92
+Aaron,Jessica,Red Hill,Clinton,1974978424,-4396.56,69.37
+Aaron,Jessica,Union,Roy,918918318,-9790.95,2598.93
+Aaron,Jill,Kingston,Glendale,641796367,-12071.93,5203.77
+Aaron,John,Fairfield,Sunnyside,2061885866,-8716.91,2276.66
